@@ -1,12 +1,12 @@
 # TicTacTe Backlog
 
-### ⚠ US1 - An empty board is generated at the start of the game
+### 🚧 US1 - An empty board is generated at the start of the game
 
-#### ⚠ UAT1.1
+#### 🚧 UAT1.1
 
 ```
   Given a new game
-  When getting the grid
+  When getting the board
   Then the grid is empty
 ```
 
