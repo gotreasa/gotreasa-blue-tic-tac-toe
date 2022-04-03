@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   - url: http://localhost:9080
-  - url: https://gotreasa-blue-tic-tac-toe-app.wdc1a.ciocloud.nonprod.intranet.ibm.com
+  - url: https://gotreasa-blue-tic-tac-toe-app.mcryx2h9klu.eu-de.codeengine.appdomain.cloud
 paths:
   /api/v1/dummy:
     get:

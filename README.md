@@ -4,8 +4,8 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/xpfarm/gotreasa-blue-tic-tac-toe/badge.svg)](https://snyk.io/test/github/xpfarm/gotreasa-blue-tic-tac-toe)
 [![Build Status](https://travis.ibm.com/GOTREASA/gotreasa-blue-tic-tac-toe.svg?token=qUvyKZdxoFqWxS8YbzZZ&branch=main)](https://travis.ibm.com/GOTREASA/gotreasa-blue-tic-tac-toe)
 
-API: [https://gotreasa-blue-tic-tac-toe-app.wdc1a.ciocloud.nonprod.intranet.ibm.com/api/v1/dummy]  
-Swagger: [https://gotreasa-blue-tic-tac-toe-swagger-ui.wdc1a.ciocloud.nonprod.intranet.ibm.com/]
+API: [https://gotreasa-blue-tic-tac-toe-app.mcryx2h9klu.eu-de.codeengine.appdomain.cloud/api/v1/dummy]  
+Swagger: [https://gotreasa-blue-tic-tac-toe-swaggerapp.mcryx2h9klu.eu-de.codeengine.appdomain.cloud]
 
 ## TODO
 
