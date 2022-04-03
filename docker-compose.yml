@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-  template-nodejs: # TODO rename
-    image: template-nodejs # TODO rename
-    container_name: template-nodejs # TODO rename
+  gotreasa-blue-tic-tac-toe: # TODO rename
+    image: gotreasa-blue-tic-tac-toe # TODO rename
+    container_name: gotreasa-blue-tic-tac-toe # TODO rename
     build:
       context: .
       dockerfile: ./Dockerfile
