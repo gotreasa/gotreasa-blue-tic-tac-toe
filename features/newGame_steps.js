@@ -18,7 +18,7 @@ When('getting the board', () => {
   game.getGrid();
 });
 
-Then('the grid is empty', () => {
+Then('the board is empty', () => {
   expect(game.getGrid()).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
 });
 

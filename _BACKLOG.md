@@ -7,7 +7,7 @@
 ```
   Given a new game
   When getting the board
-  Then the grid is empty
+  Then the board is empty
 ```
 
 ### ⚠ US2 - Get the current game board
