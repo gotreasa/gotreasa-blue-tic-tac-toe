@@ -1,0 +1,74 @@
+language: node_js
+services:
+  - docker
+addons:
+  sonarcloud:
+    organization: 'gotreasa'
+    token:
+      secure: 'RVEfFcLiCWNTnxarYhuJgSVaOWT4vdhjcOMp7VAQA2TVbiYaLcbyY/E5/YRjziWa9g9MkuFVbGbqSRQzzTDMaOsVQ9gjV0+goPbEvSLzPgUtOdBRRCCLMYt7TKcYSdbaFavL8yPjCgBPuBzF/srH+8yluinKON7/frC/dbnjtgzHmFboP7bVwSgiCAUZa6PlJ5QiWaMQsepyDvDMyW/zKY4Y7Gwv8TbBgy9/LdmWKdQP+TjNoWQEGT2tUCfOKICWJ1xGz/J39qEpItL9MrRxWA+NkAxjqskJK/ysigTmixfskc0jwEVTH9LP1Q4aDtHLlwPA9kyD8JHgcDIPhESbHyvxhgamaWH8Q6NJzL/uF9qU4Id07UoWQ+u8mCPPJy2qBbr/+xN0yTq6qy6Hp5KXdvCF2uuegQqqo++T7SxesZlDfPwv/mDagSUpXrict2TtpAurEscJHg7Luh4FeC5pq6+sQRdoMVOHN18j+HLsYn0YkDCWoTxN21hJSaGkQh+LqeyHEAbjzWwZwRjMqpOw+cyRIpLZ0LNUMRTzh/sVfY5ZXyy/qbiEKA/f+O/jUjFJOfAPo4QgyI1raW8N+s/TgiXimxs5lWikzmUjvjkAWmMawlRK8i3Y72vm/cz54IU5SL+WMugmfWKsXH4pdPvM1srIa8AgUPtJrFqtCyF8P5o='
+stages:
+  - name: Quality
+  - name: Test
+  - name: Build
+  - name: Deploy
+  - name: Smoke Test
+  - name: Monitor
+jobs:
+  include:
+    - stage: Quality
+      env: step=Snyk vulnerability check
+      name: Snyk vulnerability check
+      script: snyk test
+    - env: step=Detect secrets in files
+      name: Detect secrets in files
+      script:
+        - npm run detect-secrets $(git ls-files)
+    - env: step=Run commit lint
+      name: Run commit lint
+      script:
+        - commitlint-travis
+    - env: step=Run ESLint check
+      name: Run ESLint check
+      script:
+        - npm run lint:verify
+    - env: step=Run Prettier check
+      name: Run Prettier check
+      script:
+        - npm run prettier:verify
+    - stage: Test
+      env: step=Run tests and Sonar Scanner
+      name: Run tests and Sonar Scanner
+      script:
+        - npm test
+        - sonar-scanner
+    - env: step=Run contract tests
+      name: Run contract tests
+      before_script:
+        - npm start &
+      script:
+        - npm run build:postman
+        - npm run test:api
+    - stage: Build
+      env: step=Build and Publish image
+      name: Build and Publish image
+      script:
+        - ./scripts/buildAndPublish.sh
+    - stage: Deploy
+      env: step=Deploy the images
+      name: Deploy the images
+      script:
+        - ./scripts/deploy.sh
+    - stage: Smoke Test
+      env: step=Run contract tests
+      name: Run contract tests
+      script:
+        - npm run build:postman
+        - npm run test:api -- --env-var "baseUrl=$APP_HOST"
+    - stage: Monitor
+      env: step=Run Snyk Monitor
+      name: Run Snyk Monitor
+      script: snyk monitor
+env:
+  global:
+    # SYNK_TOKEN
+    secure: iaj1KfYIWKIc21dFaKjeAQ/nxFStGqtP2vqkMQ7d+RfO2e92JjbRkzNiXFok5+yxNJvCbUJI2GOa3CKhMOcVGlLRW0JcGY3Ga1kon9YkocANuzEEAh1IUkYXlRxiDzWI99K6HAdTPbdEXePjfiaEQN2BW8N2hqn4gwYUSzwOxwLUqhc55JKrtm9Gz3YZpqpxGFYnOm3aqaKa1hnKxpWBUyDcSVRcedfBd4eXttcqrOnEYZuDzZFr2ik2J6yIISl6Pubisewbzvqyn6AeyQ2TLOKHOstVDYflonlgPmNQpBdPlYic80sniLhXisl9buKIsKukbK0BPEGGpAydlTvARC9d6JPTyeCESiDOpJTeHBHCW0Vw/D2EPyYtpEqn8KBjR4LanqVPu+nkhDrDO3dK9r/39Ha/wlpmPkDUUPLFV2hzVUWxhPdJYKnWsvHhPgqbnMkI7BSr2VuGScS8YYAqeqa2kQe1eUouddnW/Duh/rKkLdHHdyZbjz8KECuPK5Ppzw9Sh6Vcegd0afIGmR8gA3mWeYSWPMVrd6cNVEthbJnysfQlfoH2zvPgeZXNH9u8sJznGaaRTInv6bi5Ws1dbsx+6CQM9Zr5rFd26PHojLH52JxW+O10ZALYSE+mNI4y9kgdJmLmMQFX7UOjSeFVN/W0GP2jInRtuC3BiolpNLQ=
