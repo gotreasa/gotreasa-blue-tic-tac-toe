@@ -10,9 +10,9 @@
   Then the board is empty
 ```
 
-### 🚧 US2 - Get the current game board
+### ✅ US2 - Get the current game board
 
-#### 🚧 UAT2.1
+#### ✅ UAT2.1
 
 ```
   Given a new game
@@ -28,9 +28,9 @@
     | [0,1,2]| "X|O|X\n-+--+- | | \n-+--+- | | " |
 ```
 
-### ⚠ US3 - Players take turns to mark the board
+### 🚧 US3 - Players take turns to mark the board
 
-#### ⚠ UAT3.1
+#### 🚧 UAT3.1
 
 ```
   Given a new game

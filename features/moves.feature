@@ -12,3 +12,8 @@ Then the board <squares> are returned
     | [0]    | X\| \| \n-+-+-\n \| \| \n-+-+-\n \| \|  |
     | [0,1]  | X\|O\| \n-+-+-\n \| \| \n-+-+-\n \| \|  |
     | [0,1,2]| X\|O\|X\n-+-+-\n \| \| \n-+-+-\n \| \|  |
+
+Scenario: Player X takes the first move
+Given a new game
+When checking who takes the next move
+Then it's player X turn

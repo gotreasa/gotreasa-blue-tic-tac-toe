@@ -60,7 +60,7 @@
 
 ## Pomodoro 3
 
-- 🚧 UAT2.1
+- ✅ UAT2.1
 
 ```
   Given a new game
@@ -74,4 +74,12 @@
     | [0]    | ["X"," "," "," "," "," "," "," "," "] |
     | [0,1]  | ["X","O"," "," "," "," "," "," "," "] |
     | [0,1,2]| ["X","O","X"," "," "," "," "," "," "] |
+```
+
+- 🚧 UAT3.1
+
+```
+  Given a new game
+  When checking who takes the next move
+  Then it's player X turn
 ```
