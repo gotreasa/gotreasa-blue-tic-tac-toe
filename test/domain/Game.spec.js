@@ -24,14 +24,17 @@ describe('Existing game', () => {
   });
 
   test.each`
-    steps | expectedSquares
-    ${[]} | ${[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
+    steps        | expectedBoard
+    ${[]}        | ${' | | \n-+-+-\n | | \n-+-+-\n | | '}
+    ${[0]}       | ${'X| | \n-+-+-\n | | \n-+-+-\n | | '}
+    ${[0, 1]}    | ${'X|O| \n-+-+-\n | | \n-+-+-\n | | '}
+    ${[0, 1, 2]} | ${'X|O|X\n-+-+-\n | | \n-+-+-\n | | '}
   `(
-    'should get the board state as $expectedSquares when the steps are $steps',
-    ({ steps, expectedSquares }) => {
+    'should get the board state as $expectedBoard when the steps are $steps',
+    ({ steps, expectedBoard }) => {
       game.setOrder(steps);
       game.fillSquares();
-      expect(game.squares).toEqual(expectedSquares);
+      expect(game.getGrid()).toEqual(expectedBoard);
     },
   );
 });
