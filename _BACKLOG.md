@@ -1,8 +1,8 @@
 # TicTacTe Backlog
 
-### 🚧 US1 - An empty board is generated at the start of the game
+### ✅ US1 - An empty board is generated at the start of the game
 
-#### 🚧 UAT1.1
+#### ✅ UAT1.1
 
 ```
   Given a new game
@@ -10,9 +10,9 @@
   Then the board is empty
 ```
 
-### ⚠ US2 - Get the current game board
+### 🚧 US2 - Get the current game board
 
-#### ⚠ UAT2.1
+#### 🚧 UAT2.1
 
 ```
   Given a new game
@@ -21,11 +21,11 @@
   Then the board <squares> are returned
 
   Examples:
-    | steps | squares                                |
-    | []     | [" "," "," "," "," "," "," "," "," "] |
-    | [0]    | ["X"," "," "," "," "," "," "," "," "] |
-    | [0,1]  | ["X","O"," "," "," "," "," "," "," "] |
-    | [0,1,2]| ["X","O","X"," "," "," "," "," "," "] |
+    | steps  | squares                           |
+    | []     | " | | \n-+--+- | | \n-+--+- | | " |
+    | [0]    | "X| | \n-+--+- | | \n-+--+- | | " |
+    | [0,1]  | "X|O| \n-+--+- | | \n-+--+- | | " |
+    | [0,1,2]| "X|O|X\n-+--+- | | \n-+--+- | | " |
 ```
 
 ### ⚠ US3 - Players take turns to mark the board

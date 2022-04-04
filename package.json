@@ -35,12 +35,15 @@
     "test": "npm run test:api:consumer && jest",
     "test:api": "newman run test/mock/postman_collection.json",
     "test:api:consumer": "jest test/**/*.consumer.pact.spec.js",
+    "test:api:consumer:watch": "jest test/**/*.consumer.pact.spec.js",
+    "test:api:provider": "jest test/**/*.provider.pact.spec.js",
+    "test:api:provider:watch": "jest test/**/*.provider.pact.spec.js",
     "test:api:watch": "npm run build:postman && chokidar '*.js' 'src/*.js' 'test/mock/postman_collection.json' --initial -c 'npm run test:api'",
     "test:bdd": "jest ./features",
     "test:bdd:watch": "npm run test:bdd -- --watchAll",
     "test:security": "snyk test",
     "test:security:dev": "npm run test:security -- --dev",
-    "test:unit": "jest ./test",
+    "test:unit": "jest ./test --testPathIgnorePatterns test/**/*.pact.spec.js",
     "test:unit:watch": "npm run test:unit -- --watchAll"
   },
   "lint-staged": {

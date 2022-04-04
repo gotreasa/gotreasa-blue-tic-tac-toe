@@ -2,6 +2,7 @@ const {
   Given,
   When,
   Then,
+  And,
   Fusion,
   // eslint-disable-next-line import/no-extraneous-dependencies
 } = require('jest-cucumber-fusion');
@@ -15,12 +16,18 @@ Given('a new game', () => {
   game = new Game();
 });
 
-When('getting the board', () => {
+And(/^steps (.*)$/, (stepsString) => {
+  const steps = JSON.parse(stepsString);
+  game.setOrder(steps);
+  game.fillSquares();
+});
+
+When('getting the board state', () => {
   output = game.getGrid();
 });
 
-Then('the board is empty', () => {
-  expect(output).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
+Then(/^the board ([\s\S]*) are returned$/, (squares) => {
+  expect(output).toContain(squares);
 });
 
-Fusion('newGame.feature');
+Fusion('moves.feature');
