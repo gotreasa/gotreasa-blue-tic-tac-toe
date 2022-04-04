@@ -15,3 +15,23 @@ describe('Starting a Game', () => {
     expect(game.getGrid()).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
   });
 });
+
+describe('Existing game', () => {
+  let game;
+
+  beforeEach(() => {
+    game = new Game();
+  });
+
+  test.each`
+    steps | expectedSquares
+    ${[]} | ${[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
+  `(
+    'should get the board state as $expectedSquares when the steps are $steps',
+    ({ steps, expectedSquares }) => {
+      game.setOrder(steps);
+      game.fillSquares();
+      expect(game.squares).toEqual(expectedSquares);
+    },
+  );
+});
