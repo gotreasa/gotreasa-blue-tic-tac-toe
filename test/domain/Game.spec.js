@@ -43,13 +43,14 @@ describe('Existing game', () => {
   );
 
   test.each`
-    previousMark | nextMark
-    ${'X'}       | ${'O'}
+    nextMark | futureMark
+    ${'X'}   | ${'O'}
   `(
-    'should return $nextMark as the next player when the current is $previousMark',
-    ({ previousMark, nextMark }) => {
-      game.nextPlayer = previousMark;
-      expect(game.getNextPlayer).toBe(nextMark);
+    'should return $futureMark as the next player when the current is $nextMark',
+    ({ nextMark, futureMark }) => {
+      game.nextPlayer = nextMark;
+      game.getNextPlayer();
+      expect(game.nextPlayer).toBe(futureMark);
     },
   );
 });
