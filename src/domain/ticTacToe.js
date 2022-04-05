@@ -7,9 +7,14 @@ class Game {
   }
 
   getNextPlayer() {
-    this.nextPlayer = this.PLAYER_O;
+    if (this.nextPlayer === this.PLAYER_X) {
+      this.nextPlayer = this.PLAYER_O;
 
-    return this.PLAYER_X;
+      return this.PLAYER_X;
+    }
+    this.nextPlayer = this.PLAYER_X;
+
+    return this.PLAYER_O;
   }
 
   setOrder(order) {
