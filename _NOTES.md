@@ -133,10 +133,13 @@ Examples:
 
 ## Pomodoro 6
 
-- 🚧 UAT4.1
+- ✅ UAT4.1
 
 ```
 Given a new game
 When printing the initial state
 Then the board is printed
 ```
+
+- ✅ TD4: Remove dummy test and class
+- 🚧 TD5: change getGrid just return squares

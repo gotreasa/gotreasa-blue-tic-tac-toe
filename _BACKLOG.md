@@ -52,9 +52,9 @@ Examples:
 | O         | X           |
 ```
 
-### 🚧 US4 - Printing the initial board
+### ✅ US4 - Printing the initial board
 
-#### 🚧 UAT4.1
+#### ✅ UAT4.1
 
 ```
 Given a new game
