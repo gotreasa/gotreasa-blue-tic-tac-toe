@@ -15,7 +15,17 @@ describe('Starting a Game', () => {
   });
 
   test('should have an 9 empty squares', () => {
-    expect(game.squares).toEqual([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']);
+    expect(game.board.squares).toEqual([
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+    ]);
   });
 
   test("should the board's empty state", () => {

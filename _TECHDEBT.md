@@ -7,4 +7,5 @@
 - ⚠ TD5: Move getGrid to ConsoleRender class
 - ✅ TD6: Move print to ConsoleRender class
 - ✅ TD7: Combine setOrder and fillSquares
-- 🚧 TD8: Update fillSquares to use getNextPlayer()
+- ✅ TD8: Update fillSquares to use getNextPlayer()
+- 🚧 TD9: extract squares into board class
