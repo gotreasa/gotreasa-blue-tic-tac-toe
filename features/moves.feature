@@ -27,4 +27,4 @@ Then the next mark is updated to <future mark>
     Examples:
         | next mark | future mark |
         | X         | O           |
-        # | O             | X
+        | O         | X           |
