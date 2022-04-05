@@ -38,12 +38,12 @@ Then("it's player X turn", () => {
   expect(output).toBe('X');
 });
 
-Given(/^(.*) has made the previous move$/, (mark) => {
-  game.currentPlayer = mark;
+And(/^the next mark is (.*)$/, (nextMark) => {
+  game.nextPlayer = nextMark;
 });
 
-Then(/^it's player (.*) turn$/, (mark) => {
-  expect(output).toBe(mark);
+Then(/^the next mark is updated to (.*)$/, (futureMark) => {
+  expect(output).toBe(futureMark);
 });
 
 Fusion('moves.feature');

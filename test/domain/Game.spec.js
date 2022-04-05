@@ -48,7 +48,7 @@ describe('Existing game', () => {
   `(
     'should return $nextMark as the next player when the current is $previousMark',
     ({ previousMark, nextMark }) => {
-      game.currentPlayer = previousMark;
+      game.nextPlayer = previousMark;
       expect(game.getNextPlayer).toBe(nextMark);
     },
   );

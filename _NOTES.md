@@ -86,8 +86,6 @@
 
 ## Pomodoro 4
 
-```
-
 - ✅ UAT3.1
 
 ```
@@ -113,4 +111,19 @@ Examples:
 
 ```
 
+## Pomodoro 5
+
+- 🚧 UAT3.2
+
+```
+
+Given a new game
+And the next mark is <next mark>
+When checking who takes the next move
+Then the next mark is updated to <future mark>
+
+Examples:
+| next mark | future mark |
+| X         | O           |
+| O         | X           |
 ```

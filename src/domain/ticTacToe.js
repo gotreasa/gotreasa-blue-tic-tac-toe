@@ -2,9 +2,17 @@ class Game {
   constructor() {
     this.squares = new Array(9).fill(' ');
     this.PLAYER_X = 'X';
+    this.PLAYER_O = 'O';
+    this.nextPlayer = this.PLAYER_X;
   }
 
   getNextPlayer() {
+    if (this.getNextPlayer === this.PLAYER_O) {
+      this.getNextPlayer = this.PLAYER_X;
+
+      return this.PLAYER_O;
+    }
+
     return this.PLAYER_X;
   }
 

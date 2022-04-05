@@ -19,11 +19,12 @@ When checking who takes the next move
 Then it's player X turn
 
 Scenario Outline: Players alternative turns 
-Given <previous mark> has made the previous move
+Given a new game
+And the next mark is <next mark>
 When checking who takes the next move
-Then it's player <next mark> turn
+Then the next mark is updated to <future mark>
 
     Examples:
-        | previous mark | next mark
-        | X             | O
+        | next mark | future mark |
+        | X         | O           |
         # | O             | X
