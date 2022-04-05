@@ -128,6 +128,6 @@ Examples:
 | O         | X           |
 ```
 
-- 🚧 TD1: Rename ticTacToe to Game
-- ⚠ TD2: Remove all commented lines
-- ⚠ TD3: Remove the execution of the Game class
+- ✅ TD1: Rename ticTacToe to Game
+- ✅ TD2: Remove all commented lines
+- ✅ TD3: Remove the execution of the Game class
