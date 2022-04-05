@@ -45,6 +45,7 @@ describe('Existing game', () => {
   test.each`
     nextMark | futureMark
     ${'X'}   | ${'O'}
+    ${'O'}   | ${'X'}
   `(
     'should return $futureMark as the next player when the current is $nextMark',
     ({ nextMark, futureMark }) => {
