@@ -18,8 +18,7 @@ Given('a new game', () => {
 
 And(/^steps (.*)$/, (stepsString) => {
   const steps = JSON.parse(stepsString);
-  game.setOrder(steps);
-  game.fillSquares();
+  game.fillSquares(steps);
 });
 
 When('getting the board state', () => {

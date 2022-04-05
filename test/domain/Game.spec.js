@@ -43,8 +43,7 @@ describe('Existing game', () => {
   `(
     'should get the board state as $expectedBoard when the steps are $steps',
     ({ steps, expectedBoard }) => {
-      game.setOrder(steps);
-      game.fillSquares();
+      game.fillSquares(steps);
       expect(game.getGrid()).toEqual(expectedBoard);
     },
   );
