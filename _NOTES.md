@@ -51,11 +51,11 @@
   Then the board <squares> are returned
 
   Examples:
-    | steps | squares                                |
-    | []     | [" "," "," "," "," "," "," "," "," "] |
-    | [0]    | ["X"," "," "," "," "," "," "," "," "] |
-    | [0,1]  | ["X","O"," "," "," "," "," "," "," "] |
-    | [0,1,2]| ["X","O","X"," "," "," "," "," "," "] |
+    | steps  | squares                           |
+    | []     | " | | \n-+--+- | | \n-+--+- | | " |
+    | [0]    | "X| | \n-+--+- | | \n-+--+- | | " |
+    | [0,1]  | "X|O| \n-+--+- | | \n-+--+- | | " |
+    | [0,1,2]| "X|O|X\n-+--+- | | \n-+--+- | | " |
 ```
 
 ## Pomodoro 3
@@ -69,11 +69,11 @@
   Then the board <squares> are returned
 
   Examples:
-    | steps | squares                                |
-    | []     | [" "," "," "," "," "," "," "," "," "] |
-    | [0]    | ["X"," "," "," "," "," "," "," "," "] |
-    | [0,1]  | ["X","O"," "," "," "," "," "," "," "] |
-    | [0,1,2]| ["X","O","X"," "," "," "," "," "," "] |
+    | steps  | squares                           |
+    | []     | " | | \n-+--+- | | \n-+--+- | | " |
+    | [0]    | "X| | \n-+--+- | | \n-+--+- | | " |
+    | [0,1]  | "X|O| \n-+--+- | | \n-+--+- | | " |
+    | [0,1,2]| "X|O|X\n-+--+- | | \n-+--+- | | " |
 ```
 
 - 🚧 UAT3.1
@@ -82,4 +82,20 @@
   Given a new game
   When checking who takes the next move
   Then it's player X turn
+```
+
+## Pomodoro 4
+
+```
+
+- 🚧 UAT3.1
+
+```
+
+Given a new game
+When checking who takes the next move
+Then it's player X turn
+
+```
+
 ```

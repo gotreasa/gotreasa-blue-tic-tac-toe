@@ -14,6 +14,10 @@ describe('Starting a Game', () => {
   test("should the board's empty state", () => {
     expect(game.getGrid()).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
   });
+
+  test('should start with player X', () => {
+    expect(game.getNextPlayer()).toBe('X');
+  });
 });
 
 describe('Existing game', () => {

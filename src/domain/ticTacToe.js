@@ -1,6 +1,11 @@
 class Game {
   constructor() {
     this.squares = new Array(9).fill(' ');
+    this.PLAYER_X = 'X';
+  }
+
+  getNextPlayer() {
+    return this.PLAYER_X;
   }
 
   setOrder(order) {
