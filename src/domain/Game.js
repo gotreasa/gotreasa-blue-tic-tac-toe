@@ -18,8 +18,8 @@ class Game {
   }
 
   fillSquares(order) {
-    order.forEach((value, index) => {
-      this.squares[value] = index % 2 === 0 ? 'X' : 'O';
+    order.forEach((value) => {
+      this.squares[value] = this.getNextPlayer();
     });
 
     return this.squares;
