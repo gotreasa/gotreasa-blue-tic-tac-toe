@@ -51,3 +51,13 @@ Examples:
 | X         | O           |
 | O         | X           |
 ```
+
+### 🚧 US4 - Printing the initial board
+
+#### 🚧 UAT4.1
+
+```
+Given a new game
+When printing the initial state
+Then the board is printed
+```

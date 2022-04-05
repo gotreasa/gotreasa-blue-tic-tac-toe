@@ -116,7 +116,6 @@ Examples:
 - ✅ UAT3.2
 
 ```
-
 Given a new game
 And the next mark is <next mark>
 When checking who takes the next move
@@ -131,3 +130,13 @@ Examples:
 - ✅ TD1: Rename ticTacToe to Game
 - ✅ TD2: Remove all commented lines
 - ✅ TD3: Remove the execution of the Game class
+
+## Pomodoro 6
+
+- 🚧 UAT4.1
+
+```
+Given a new game
+When printing the initial state
+Then the board is printed
+```
