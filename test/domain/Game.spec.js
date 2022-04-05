@@ -1,4 +1,4 @@
-const { Game } = require('../../src/domain/ticTacToe');
+const { Game } = require('../../src/domain/Game');
 
 describe('Starting a Game', () => {
   let game;

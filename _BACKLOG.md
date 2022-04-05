@@ -28,7 +28,7 @@
     | [0,1,2]| "X|O|X\n-+-+-\n | | \n-+-+-\n | | " |
 ```
 
-### 🚧 US3 - Players take turns to mark the board
+### ✅ US3 - Players take turns to mark the board
 
 #### ✅ UAT3.1
 
@@ -38,7 +38,7 @@
   Then it's player X turn
 ```
 
-#### 🚧 UAT3.2
+#### ✅ UAT3.2
 
 ```
 Given a new game

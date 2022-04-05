@@ -7,7 +7,7 @@ const {
   // eslint-disable-next-line import/no-extraneous-dependencies
 } = require('jest-cucumber-fusion');
 
-const { Game } = require('../src/domain/ticTacToe');
+const { Game } = require('../src/domain/Game');
 
 let game;
 let output;

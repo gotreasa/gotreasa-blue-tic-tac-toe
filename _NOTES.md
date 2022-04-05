@@ -113,7 +113,7 @@ Examples:
 
 ## Pomodoro 5
 
-- 🚧 UAT3.2
+- ✅ UAT3.2
 
 ```
 
@@ -127,3 +127,7 @@ Examples:
 | X         | O           |
 | O         | X           |
 ```
+
+- 🚧 TD1: Rename ticTacToe to Game
+- ⚠ TD2: Remove all commented lines
+- ⚠ TD3: Remove the execution of the Game class
