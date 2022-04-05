@@ -7,11 +7,7 @@ class Game {
   }
 
   getNextPlayer() {
-    if (this.getNextPlayer === this.PLAYER_O) {
-      this.getNextPlayer = this.PLAYER_X;
-
-      return this.PLAYER_O;
-    }
+    this.nextPlayer = this.PLAYER_O;
 
     return this.PLAYER_X;
   }

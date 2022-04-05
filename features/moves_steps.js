@@ -43,7 +43,7 @@ And(/^the next mark is (.*)$/, (nextMark) => {
 });
 
 Then(/^the next mark is updated to (.*)$/, (futureMark) => {
-  expect(output).toBe(futureMark);
+  expect(game.nextPlayer).toBe(futureMark);
 });
 
 Fusion('moves.feature');
