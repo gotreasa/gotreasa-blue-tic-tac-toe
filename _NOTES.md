@@ -142,4 +142,7 @@ Then the board is printed
 ```
 
 - ✅ TD4: Remove dummy test and class
-- 🚧 TD5: change getGrid just return squares
+- 🚧 TD5: Move getGrid to ConsoleRender class
+- ⚠ TD6: Move print to ConsoleRender class
+- ⚠ TD7: Combine setOrder and fillSquares
+- ⚠ TD8: Update fillSquares to use getNextPlayer()

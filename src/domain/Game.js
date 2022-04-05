@@ -36,16 +36,6 @@ ${this.squares[3]}|${this.squares[4]}|${this.squares[5]}
 -+-+-
 ${this.squares[6]}|${this.squares[7]}|${this.squares[8]}`;
   }
-
-  print() {
-    this.output = `Game Board Creation…
-  ${this.getGrid()}
-  Board Created.
-  The game will start with player X`;
-    console.log(this.output);
-
-    return this.output;
-  }
 }
 
 module.exports = {

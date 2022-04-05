@@ -25,13 +25,6 @@ describe('Starting a Game', () => {
   test('should start with player X', () => {
     expect(game.getNextPlayer()).toBe('X');
   });
-
-  test('should print the initial game board', () => {
-    game.print();
-    expect(console.log).toHaveBeenCalledWith(
-      expect.stringContaining(INITIAL_BOARD),
-    );
-  });
 });
 
 describe('Existing game', () => {
