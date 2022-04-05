@@ -41,4 +41,15 @@ describe('Existing game', () => {
       expect(game.getGrid()).toEqual(expectedBoard);
     },
   );
+
+  test.each`
+    previousMark | nextMark
+    ${'X'}       | ${'O'}
+  `(
+    'should return $nextMark as the next player when the current is $previousMark',
+    ({ previousMark, nextMark }) => {
+      game.currentPlayer = previousMark;
+      expect(game.getNextPlayer).toBe(nextMark);
+    },
+  );
 });
