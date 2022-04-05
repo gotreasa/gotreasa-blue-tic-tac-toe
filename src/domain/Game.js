@@ -17,12 +17,8 @@ class Game {
     return this.PLAYER_O;
   }
 
-  setOrder(order) {
-    this.order = order;
-  }
-
-  fillSquares() {
-    this.order.forEach((value, index) => {
+  fillSquares(order) {
+    order.forEach((value, index) => {
       this.squares[value] = index % 2 === 0 ? 'X' : 'O';
     });
 

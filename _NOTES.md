@@ -150,5 +150,5 @@ Then the board is printed
 ## Pomodoro 7
 
 - ⚠ TD5: Move getGrid to ConsoleRender class
-- 🚧 TD7: Combine setOrder and fillSquares
+- ✅ TD7: Combine setOrder and fillSquares
 - ⚠ TD8: Update fillSquares to use getNextPlayer()
