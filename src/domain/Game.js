@@ -33,11 +33,13 @@ class Game {
   }
 
   getGrid() {
-    return `${this.board.squares[0]}|${this.board.squares[1]}|${this.board.squares[2]}
+    const squares = this.board.getSquares();
+
+    return `${squares[0]}|${squares[1]}|${squares[2]}
 -+-+-
-${this.board.squares[3]}|${this.board.squares[4]}|${this.board.squares[5]}
+${squares[3]}|${squares[4]}|${squares[5]}
 -+-+-
-${this.board.squares[6]}|${this.board.squares[7]}|${this.board.squares[8]}`;
+${squares[6]}|${squares[7]}|${squares[8]}`;
   }
 }
 
