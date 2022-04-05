@@ -88,13 +88,28 @@
 
 ```
 
-- 🚧 UAT3.1
+- ✅ UAT3.1
 
 ```
 
 Given a new game
 When checking who takes the next move
 Then it's player X turn
+
+```
+
+- 🚧 UAT3.2
+
+```
+
+Given <previous mark> has made
+When checking who takes the next move
+Then it's player <next makr> turn
+
+Examples:
+| previous mark | next mark
+| X | O
+| O | X
 
 ```
 

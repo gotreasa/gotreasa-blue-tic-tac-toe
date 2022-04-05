@@ -30,7 +30,7 @@
 
 ### 🚧 US3 - Players take turns to mark the board
 
-#### 🚧 UAT3.1
+#### ✅ UAT3.1
 
 ```
   Given a new game
@@ -38,7 +38,7 @@
   Then it's player X turn
 ```
 
-#### ⚠ UAT3.2
+#### 🚧 UAT3.2
 
 ```
   Given <previous mark> has made
