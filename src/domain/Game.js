@@ -53,8 +53,11 @@ class Game {
     if (doMarksMatch([squares[0], squares[3], squares[6]])) {
       return `${squares[0]}_WON`;
     }
+    if (doMarksMatch([squares[1], squares[4], squares[7]])) {
+      return `${squares[1]}_WON`;
+    }
 
-    return `${squares[1]}_WON`;
+    return `${squares[2]}_WON`;
   }
 }
 
