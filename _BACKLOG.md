@@ -62,9 +62,9 @@ When printing the initial state
 Then the board is printed
 ```
 
-### ⚠ US5 - Winning game statuses
+### 🚧 US5 - Winning game statuses
 
-#### ⚠ UAT5.1 - Horizontal win
+#### 🚧 UAT5.1 - Horizontal win
 
 ```
   Given a new game
