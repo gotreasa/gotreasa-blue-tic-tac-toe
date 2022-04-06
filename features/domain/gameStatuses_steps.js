@@ -16,8 +16,8 @@ Given('a new game', () => {
   game = new Game();
 });
 
-And(/^the squares are marked as follows (.*)$/, (squaares) => {
-  game.board.getSquares = jest.fn(() => JSON.parse(squaares));
+And(/^the squares are marked as follows (.*)$/, (squares) => {
+  game.board.getSquares = jest.fn(() => JSON.parse(squares));
 });
 
 When('the game status is checked', () => {

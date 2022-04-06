@@ -37,7 +37,16 @@ class Game {
   }
 
   getGameStatus() {
-    return `${this.PLAYER_X}_WON`;
+    const squares = this.board.getSquares();
+    if (
+      squares[0] === squares[1] &&
+      squares[1] === squares[2] &&
+      squares[0] !== ' '
+    ) {
+      return `${squares[0]}_WON`;
+    }
+
+    return `${this.PLAYER_O}_WON`;
   }
 }
 
