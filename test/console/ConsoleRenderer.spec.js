@@ -20,4 +20,8 @@ describe('Starting a ConsoleRenderer', () => {
       expect.stringContaining(INITIAL_BOARD),
     );
   });
+
+  test('should get the empty state of the board', () => {
+    expect(consoleRenderer.getGrid()).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
+  });
 });
