@@ -1,7 +1,5 @@
 const { Game } = require('../../src/domain/Game');
 
-const INITIAL_BOARD = ' | | \n-+-+-\n | | \n-+-+-\n | | ';
-
 describe('Starting a Game', () => {
   let game;
 
@@ -28,10 +26,6 @@ describe('Starting a Game', () => {
     ]);
   });
 
-  test("should the board's empty state", () => {
-    expect(game.getGrid()).toBe(INITIAL_BOARD);
-  });
-
   test('should start with player X', () => {
     expect(game.getNextPlayer()).toBe('X');
   });
@@ -46,15 +40,15 @@ describe('Existing game', () => {
 
   test.each`
     steps        | expectedBoard
-    ${[]}        | ${INITIAL_BOARD}
-    ${[0]}       | ${'X| | \n-+-+-\n | | \n-+-+-\n | | '}
-    ${[0, 1]}    | ${'X|O| \n-+-+-\n | | \n-+-+-\n | | '}
-    ${[0, 1, 2]} | ${'X|O|X\n-+-+-\n | | \n-+-+-\n | | '}
+    ${[]}        | ${[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
+    ${[0]}       | ${['X', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
+    ${[0, 1]}    | ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']}
+    ${[0, 1, 2]} | ${['X', 'O', 'X', ' ', ' ', ' ', ' ', ' ', ' ']}
   `(
     'should get the board state as $expectedBoard when the steps are $steps',
     ({ steps, expectedBoard }) => {
       game.fillSquares(steps);
-      expect(game.getGrid()).toEqual(expectedBoard);
+      expect(game.getBoardState()).toEqual(expectedBoard);
     },
   );
 

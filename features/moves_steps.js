@@ -22,11 +22,12 @@ And(/^steps (.*)$/, (stepsString) => {
 });
 
 When('getting the board state', () => {
-  output = game.getGrid();
+  output = game.getBoardState();
 });
 
-Then(/^the board ([\s\S]*) are returned$/, (squares) => {
-  expect(output).toContain(squares);
+Then(/^the board ([\s\S]*) are returned$/, (squaresString) => {
+  const squares = JSON.parse(squaresString);
+  expect(output).toEqual(squares);
 });
 
 When('checking who takes the next move', () => {

@@ -7,11 +7,24 @@ describe('Starting a ConsoleRenderer', () => {
 
   beforeEach(() => {
     consoleRenderer = new ConsoleRenderer();
+    consoleRenderer.game.board.getSquares = jest.fn();
+    consoleRenderer.game.board.getSquares.mockReturnValue([
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+      ' ',
+    ]);
     console.log = jest.fn();
   });
 
   afterEach(() => {
     console.log.mockReset();
+    consoleRenderer.game.board.getSquares.mockReset();
   });
 
   test('should print the initial game board', () => {

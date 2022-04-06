@@ -29,17 +29,11 @@ class Game {
       this.fillSquare(position, this.getNextPlayer());
     });
 
-    return this.board.squares;
+    return this.getBoardState();
   }
 
-  getGrid() {
-    const squares = this.board.getSquares();
-
-    return `${squares[0]}|${squares[1]}|${squares[2]}
--+-+-
-${squares[3]}|${squares[4]}|${squares[5]}
--+-+-
-${squares[6]}|${squares[7]}|${squares[8]}`;
+  getBoardState() {
+    return this.board.getSquares();
   }
 }
 

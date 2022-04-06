@@ -17,21 +17,11 @@ Given('a new game', () => {
 });
 
 When('getting the board', () => {
-  output = game.getGrid();
+  output = game.getBoardState();
 });
 
 Then('the board is empty', () => {
-  expect(output).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
-});
-
-When('printing the initial state', () => {
-  game.print();
-});
-
-Then('the board is printed', () => {
-  expect(console.log).toHaveBeenCalledWith(
-    expect.stringContaining(' | | \n-+-+-\n | | \n-+-+-\n | | '),
-  );
+  expect(output).toEqual([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']);
 });
 
 Fusion('newGame.feature');
