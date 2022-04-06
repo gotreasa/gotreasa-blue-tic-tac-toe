@@ -64,4 +64,15 @@ describe('Existing game', () => {
       expect(game.nextPlayer).toBe(futureMark);
     },
   );
+
+  test.each`
+    status     | squares                                          | condition
+    ${'X_WOM'} | ${['X', 'X', 'X', 'O', 'O', ' ', ' ', ' ', ' ']} | ${'top row win'}
+  `(
+    'should return status of $markWon for $condition where the board is filled out as $squares',
+    ({ status, squares }) => {
+      game.board.squares = squares;
+      expect(game.getGameStatus()).toBe(status);
+    },
+  );
 });
