@@ -156,5 +156,5 @@ Then the board is printed
 
 ## Pomodoro 8
 
-- ⚠ TD5: Move getGrid to ConsoleRender class
-- ⚠ Plan out the backlog for the domain
+- ✅ TD5: Move getGrid to ConsoleRender class
+- ✅ Plan out the backlog for the domain
