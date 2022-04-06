@@ -178,7 +178,7 @@ Then the board is printed
 
 ## Pomodoro 10
 
-- 🚧 UAT5.1 - Horizontal win
+- ✅ UAT5.1 - Horizontal win
 
 ```
   Given a new game
@@ -191,4 +191,19 @@ Then the board is printed
   | ['X', 'X', 'X', 'O', 'O', ' ', ' ', ' ', ' '] | X    |
   | [' ', 'X', 'X', 'O', 'O', 'O', 'X', ' ', ' '] | O    |
   | [' ', 'O', 'O', ' ', ' ', ' ', 'X', 'X', 'X'] | X    |
+```
+
+- 🚧 UAT5.2 - Vertical win
+
+```
+  Given a new game
+  And the squares are marked as follows <squares>
+  When the game status is checked
+  Then <mark> has won
+
+  Examples:
+  | squares                                       | mark |
+  | ['X', 'O', ' ', 'X', 'O', ' ', 'X', ' ', ' '] | X    |
+  | [' ', 'O', 'X', 'X', 'O', ' ', 'X', 'O', ' '] | O    |
+  | [' ', 'O', 'X', ' ', 'O', 'X', ' ', ' ', 'X'] | X    |
 ```

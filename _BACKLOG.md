@@ -64,7 +64,7 @@ Then the board is printed
 
 ### 🚧 US5 - Winning game statuses
 
-#### 🚧 UAT5.1 - Horizontal win
+#### ✅ UAT5.1 - Horizontal win
 
 ```
   Given a new game
@@ -79,7 +79,7 @@ Then the board is printed
   | [' ', 'O', 'O', ' ', ' ', ' ', 'X', 'X', 'X'] | X    |
 ```
 
-#### ⚠ UAT5.2 - Vertical win
+#### 🚧 UAT5.2 - Vertical win
 
 ```
   Given a new game

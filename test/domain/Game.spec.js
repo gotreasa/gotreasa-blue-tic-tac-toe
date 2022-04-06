@@ -70,6 +70,7 @@ describe('Existing game', () => {
     ${'X_WON'} | ${['X', 'X', 'X', 'O', 'O', ' ', ' ', ' ', ' ']} | ${'top row win'}
     ${'O_WON'} | ${[' ', 'X', 'X', 'O', 'O', 'O', 'X', ' ', ' ']} | ${'middle row win'}
     ${'X_WON'} | ${[' ', 'O', 'O', ' ', ' ', ' ', 'X', 'X', 'X']} | ${'bottom row win'}
+    ${'X_WON'} | ${['X', 'O', ' ', 'X', 'O', ' ', 'X', ' ', ' ']} | ${'left column win'}
   `(
     'should return status of $markWon for $condition where the board is filled out as $squares',
     ({ status, squares }) => {
