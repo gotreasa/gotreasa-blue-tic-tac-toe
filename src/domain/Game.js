@@ -47,8 +47,14 @@ class Game {
     if (doMarksMatch([squares[3], squares[4], squares[5]])) {
       return `${squares[3]}_WON`;
     }
+    if (doMarksMatch([squares[6], squares[7], squares[8]])) {
+      return `${squares[6]}_WON`;
+    }
+    if (doMarksMatch([squares[0], squares[3], squares[6]])) {
+      return `${squares[0]}_WON`;
+    }
 
-    return `${squares[6]}_WON`;
+    return `${squares[1]}_WON`;
   }
 }
 
