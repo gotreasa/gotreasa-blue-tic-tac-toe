@@ -25,7 +25,7 @@ When('the game status is checked', () => {
 });
 
 Then(/^(.*) has won$/, (mark) => {
-  expect(output).toBe(`${mark}_WOM`);
+  expect(output).toBe(`${mark}_WON`);
 });
 
 Fusion('gameStatuses.feature');

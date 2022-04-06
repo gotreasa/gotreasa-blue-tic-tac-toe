@@ -67,7 +67,7 @@ describe('Existing game', () => {
 
   test.each`
     status     | squares                                          | condition
-    ${'X_WOM'} | ${['X', 'X', 'X', 'O', 'O', ' ', ' ', ' ', ' ']} | ${'top row win'}
+    ${'X_WON'} | ${['X', 'X', 'X', 'O', 'O', ' ', ' ', ' ', ' ']} | ${'top row win'}
   `(
     'should return status of $markWon for $condition where the board is filled out as $squares',
     ({ status, squares }) => {

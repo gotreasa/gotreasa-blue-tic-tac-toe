@@ -35,6 +35,10 @@ class Game {
   getBoardState() {
     return this.board.getSquares();
   }
+
+  getGameStatus() {
+    return `${this.PLAYER_X}_WON`;
+  }
 }
 
 module.exports = {
