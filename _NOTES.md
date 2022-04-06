@@ -175,3 +175,20 @@ Then the board is printed
   | [' ', 'X', 'X', 'O', 'O', 'O', 'X', ' ', ' '] | O    |
   | [' ', 'O', 'O', ' ', ' ', ' ', 'X', 'X', 'X'] | X    |
 ```
+
+## Pomodoro 10
+
+- 🚧 UAT5.1 - Horizontal win
+
+```
+  Given a new game
+  And the squares are marked as follows <squares>
+  When the game status is checked
+  Then <mark> has won
+
+  Examples:
+  | squares                                       | mark |
+  | ['X', 'X', 'X', 'O', 'O', ' ', ' ', ' ', ' '] | X    |
+  | [' ', 'X', 'X', 'O', 'O', 'O', 'X', ' ', ' '] | O    |
+  | [' ', 'O', 'O', ' ', ' ', ' ', 'X', 'X', 'X'] | X    |
+```
