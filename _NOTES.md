@@ -210,7 +210,7 @@ Then the board is printed
 
 ## Pomodoro 11
 
-- 🚧 UAT5.3 - Diagonal win
+- ✅ UAT5.3 - Diagonal win
 
 ```
   Given a new game
@@ -224,4 +224,4 @@ Then the board is printed
   | [' ', 'X', 'O', 'X', 'O', ' ', 'O', 'X', ' '] | O    |
 ```
 
-- ⚠ Refactor the Game status
+- 🚧 Refactor the Game status

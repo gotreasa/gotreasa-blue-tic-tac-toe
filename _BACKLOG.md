@@ -94,7 +94,7 @@ Then the board is printed
   | [" ", "O", "X", " ", "O", "X", " ", " ", "X"] | X    |
 ```
 
-#### 🚧 UAT5.3 - Diagonal win
+#### ✅ UAT5.3 - Diagonal win
 
 ```
   Given a new game
