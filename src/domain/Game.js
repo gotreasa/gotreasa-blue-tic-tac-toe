@@ -1,8 +1,12 @@
 const { Board } = require('./Board');
 
-const doMarksMatch = (squares) =>
-  squares[0] === squares[1] && squares[1] === squares[2] && squares[0] !== ' ';
-
+const LEFT_COLUMN = [0, 1, 2];
+const MIDDLE_COLUMN = [3, 4, 5];
+const RGHT_COLUMN = [6, 7, 8];
+const TOP_ROW = [0, 3, 6];
+const MIDDLE_ROW = [1, 4, 7];
+const BOTTOM_ROW = [2, 5, 8];
+const BACKWARD_DIAGONAL = [0, 4, 8];
 class Game {
   constructor() {
     this.board = new Board();
@@ -39,27 +43,37 @@ class Game {
     return this.board.getSquares();
   }
 
+  doMarksMatch(positions) {
+    const squares = this.board.getSquares();
+
+    return (
+      squares[positions[0]] === squares[positions[1]] &&
+      squares[positions[1]] === squares[positions[2]] &&
+      squares[positions[1]] !== ' '
+    );
+  }
+
   getGameStatus() {
     const squares = this.board.getSquares();
-    if (doMarksMatch([squares[0], squares[1], squares[2]])) {
+    if (this.doMarksMatch(LEFT_COLUMN)) {
       return `${squares[0]}_WON`;
     }
-    if (doMarksMatch([squares[3], squares[4], squares[5]])) {
+    if (this.doMarksMatch(MIDDLE_COLUMN)) {
       return `${squares[3]}_WON`;
     }
-    if (doMarksMatch([squares[6], squares[7], squares[8]])) {
+    if (this.doMarksMatch(RGHT_COLUMN)) {
       return `${squares[6]}_WON`;
     }
-    if (doMarksMatch([squares[0], squares[3], squares[6]])) {
+    if (this.doMarksMatch(TOP_ROW)) {
       return `${squares[0]}_WON`;
     }
-    if (doMarksMatch([squares[1], squares[4], squares[7]])) {
+    if (this.doMarksMatch(MIDDLE_ROW)) {
       return `${squares[1]}_WON`;
     }
-    if (doMarksMatch([squares[2], squares[5], squares[8]])) {
+    if (this.doMarksMatch(BOTTOM_ROW)) {
       return `${squares[2]}_WON`;
     }
-    if (doMarksMatch([squares[0], squares[4], squares[8]])) {
+    if (this.doMarksMatch(BACKWARD_DIAGONAL)) {
       return `${squares[0]}_WON`;
     }
 
