@@ -104,7 +104,7 @@ Then the board is printed
 
   Examples:
   | squares                                       | mark |
-  | ["X", "O", " ", "X", " ", " ", "O", " ", "X"] | X    |
+  | ["X", "O", " ", " ", "X", " ", "O", " ", "X"] | X    |
   | [" ", "X", "O", "X", "O", " ", "O", "X", " "] | O    |
 ```
 
