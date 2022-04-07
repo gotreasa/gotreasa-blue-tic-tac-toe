@@ -223,3 +223,5 @@ Then the board is printed
   | ['X', 'O', ' ', 'X', ' ', ' ', 'O', ' ', 'X'] | X    |
   | [' ', 'X', 'O', 'X', 'O', ' ', 'O', 'X', ' '] | O    |
 ```
+
+- ⚠ Refactor the Game status
