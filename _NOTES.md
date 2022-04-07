@@ -193,7 +193,7 @@ Then the board is printed
   | [' ', 'O', 'O', ' ', ' ', ' ', 'X', 'X', 'X'] | X    |
 ```
 
-- 🚧 UAT5.2 - Vertical win
+- ✅ UAT5.2 - Vertical win
 
 ```
   Given a new game
@@ -206,4 +206,20 @@ Then the board is printed
   | ["X", "O", " ", "X", "O", " ", "X", " ", " "] | X    |
   | [" ", "O", "X", "X", "O", " ", "X", "O", " "] | O    |
   | [" ", "O", "X", " ", "O", "X", " ", " ", "X"] | X    |
+```
+
+## Pomodoro 11
+
+- 🚧 UAT5.3 - Diagonal win
+
+```
+  Given a new game
+  And the squares are marked as follows <squares>
+  When the game status is checked
+  Then <mark> has won
+
+  Examples:
+  | squares                                       | mark |
+  | ['X', 'O', ' ', 'X', ' ', ' ', 'O', ' ', 'X'] | X    |
+  | [' ', 'X', 'O', 'X', 'O', ' ', 'O', 'X', ' '] | O    |
 ```
