@@ -83,7 +83,7 @@ class Game {
       return `${squares[2]}_WON`;
     }
     if (squares.includes(' ')) {
-      return `${this.nextPlayer}_TURN`;
+      return `X_TURN`;
     }
 
     return 'DRAW';

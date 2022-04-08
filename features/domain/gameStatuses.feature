@@ -54,4 +54,4 @@ Then <mark> is next to take a turn
   Examples:
   | squares                                       | mark |
   | ["X", "O", " ", "X", " ", " ", "O", " ", " "] | X    |
-  # | [" ", "X", "O", "X", "O", " ", " ", "X", " "] | O    |
+  | [" ", "X", "O", "X", "O", " ", " ", "X", " "] | O    |
