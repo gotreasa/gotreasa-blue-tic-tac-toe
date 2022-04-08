@@ -56,15 +56,15 @@ describe('Existing game', () => {
   );
 
   test.each`
-    nextMark | futureMark
-    ${'X'}   | ${'O'}
-    ${'O'}   | ${'X'}
+    stepCount | nextMark
+    ${5}      | ${'O'}
+    ${6}      | ${'X'}
   `(
-    'should return $futureMark as the next player when the current is $nextMark',
-    ({ nextMark, futureMark }) => {
-      game.nextPlayer = nextMark;
-      game.getNextPlayer();
-      expect(game.nextPlayer).toBe(futureMark);
+    'should return $nextMark as the next player when the current is $nextMark',
+    ({ stepCount, nextMark }) => {
+      game.getStepCount = jest.fn(() => stepCount);
+      expect(game.getNextPlayer()).toBe(nextMark);
+      game.getStepCount.mockReset();
     },
   );
 
