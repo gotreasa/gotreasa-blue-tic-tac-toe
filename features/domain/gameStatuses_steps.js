@@ -32,4 +32,8 @@ Then('game ends in a draw', () => {
   expect(output).toBe(`DRAW`);
 });
 
+Then(/^(.*) is next to take a turn$/, (mark) => {
+  expect(output).toBe(`${mark}_TURN`);
+});
+
 Fusion('gameStatuses.feature');

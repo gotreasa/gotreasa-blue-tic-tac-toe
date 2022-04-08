@@ -44,3 +44,14 @@ Then game ends in a draw
   Examples:
   | squares                                       |
   | ["X", "O", "X", "X", "O", "X", "O", "X", "O"] |
+
+Scenario Outline: Next turn
+Given a new game
+And the squares are marked as follows <squares>
+When the game status is checked
+Then <mark> is next to take a turn
+
+  Examples:
+  | squares                                       | mark |
+  | ["X", "O", " ", "X", " ", " ", "O", " ", " "] | X    |
+  # | [" ", "X", "O", "X", "O", " ", " ", "X", " "] | O    |

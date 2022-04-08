@@ -228,7 +228,7 @@ Then the board is printed
 
 ## Pomodoro 12
 
-- 🚧 UAT6.1 - Game end in a draw
+- ✅ UAT6.1 - Game end in a draw
 
 ```
   Given a new game
@@ -237,7 +237,7 @@ Then the board is printed
   Then game ends in a draw
 ```
 
-- ⚠ UAT7.1 - Next turn status
+- 🚧 UAT7.1 - Next turn status
 
 ```
   Given a new game
