@@ -60,7 +60,7 @@ describe('Existing game', () => {
     ${5}      | ${'O'}
     ${6}      | ${'X'}
   `(
-    'should return $nextMark as the next player when the current is $nextMark',
+    'should return $nextMark as the next player when $stepCount squares are filled',
     ({ stepCount, nextMark }) => {
       game.getStepCount = jest.fn(() => stepCount);
       expect(game.getNextPlayer()).toBe(nextMark);
