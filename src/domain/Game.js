@@ -82,6 +82,9 @@ class Game {
     if (this.doMarksMatch(FORWARD_DIAGONAL)) {
       return `${squares[2]}_WON`;
     }
+    if (squares.includes(' ')) {
+      return `${this.nextPlayer}_TURN`;
+    }
 
     return 'DRAW';
   }

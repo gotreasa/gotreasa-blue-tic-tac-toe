@@ -45,7 +45,7 @@ Then game ends in a draw
   | squares                                       |
   | ["X", "O", "X", "X", "O", "X", "O", "X", "O"] |
 
-Scenario Outline: Next turn
+Scenario Outline: Next turn is <mark>
 Given a new game
 And the squares are marked as follows <squares>
 When the game status is checked
