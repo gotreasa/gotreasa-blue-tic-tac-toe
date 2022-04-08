@@ -80,6 +80,7 @@ describe('Existing game', () => {
     ${'O_WON'}  | ${FORWARD_DIAGONAL_O_WIN}                        | ${'forward diagonal win'}
     ${'DRAW'}   | ${DRAW_BAORD}                                    | ${'draw game'}
     ${'X_TURN'} | ${['X', 'O', ' ', 'X', ' ', ' ', 'O', ' ', ' ']} | ${'X is next to take a move'}
+    ${'O_TURN'} | ${[' ', 'X', 'O', 'X', 'O', ' ', ' ', 'X', ' ']} | ${'O is next to take a move'}
   `(
     'should return status of $status for $condition where the board is filled out as $squares',
     ({ status, squares }) => {
