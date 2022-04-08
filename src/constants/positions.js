@@ -5,6 +5,7 @@ const TOP_ROW = [0, 3, 6];
 const MIDDLE_ROW = [1, 4, 7];
 const BOTTOM_ROW = [2, 5, 8];
 const BACKWARD_DIAGONAL = [0, 4, 8];
+const FORWARD_DIAGONAL = [2, 4, 6];
 
 module.exports = {
   LEFT_COLUMN,
@@ -14,4 +15,5 @@ module.exports = {
   MIDDLE_ROW,
   BOTTOM_ROW,
   BACKWARD_DIAGONAL,
+  FORWARD_DIAGONAL,
 };

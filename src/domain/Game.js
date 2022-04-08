@@ -7,6 +7,7 @@ const {
   MIDDLE_ROW,
   BOTTOM_ROW,
   BACKWARD_DIAGONAL,
+  FORWARD_DIAGONAL,
 } = require('../constants/positions');
 
 class Game {
@@ -78,8 +79,11 @@ class Game {
     if (this.doMarksMatch(BACKWARD_DIAGONAL)) {
       return `${squares[0]}_WON`;
     }
+    if (this.doMarksMatch(FORWARD_DIAGONAL)) {
+      return `${squares[2]}_WON`;
+    }
 
-    return `${squares[2]}_WON`;
+    return 'DRAW';
   }
 }
 
