@@ -69,16 +69,17 @@ describe('Existing game', () => {
   );
 
   test.each`
-    status     | squares                    | condition
-    ${'X_WON'} | ${TOP_ROW_X_WIN}           | ${'top row win'}
-    ${'O_WON'} | ${MIDDLE_ROW_O_WIN}        | ${'middle row win'}
-    ${'X_WON'} | ${BOTTOM_ROW_X_WIN}        | ${'bottom row win'}
-    ${'X_WON'} | ${LEFT_COLUMN_X_WIN}       | ${'left column win'}
-    ${'O_WON'} | ${MIDDLE_COLUMN_O_WIN}     | ${'middle column win'}
-    ${'X_WON'} | ${RIGHT_COLUMN_X_WIN}      | ${'right column win'}
-    ${'X_WON'} | ${BACKWARD_DIAGONAL_X_WIN} | ${'back diagonal win'}
-    ${'O_WON'} | ${FORWARD_DIAGONAL_O_WIN}  | ${'forward diagonal win'}
-    ${'DRAW'}  | ${DRAW_BAORD}              | ${'draw game'}
+    status      | squares                                          | condition
+    ${'X_WON'}  | ${TOP_ROW_X_WIN}                                 | ${'top row win'}
+    ${'O_WON'}  | ${MIDDLE_ROW_O_WIN}                              | ${'middle row win'}
+    ${'X_WON'}  | ${BOTTOM_ROW_X_WIN}                              | ${'bottom row win'}
+    ${'X_WON'}  | ${LEFT_COLUMN_X_WIN}                             | ${'left column win'}
+    ${'O_WON'}  | ${MIDDLE_COLUMN_O_WIN}                           | ${'middle column win'}
+    ${'X_WON'}  | ${RIGHT_COLUMN_X_WIN}                            | ${'right column win'}
+    ${'X_WON'}  | ${BACKWARD_DIAGONAL_X_WIN}                       | ${'back diagonal win'}
+    ${'O_WON'}  | ${FORWARD_DIAGONAL_O_WIN}                        | ${'forward diagonal win'}
+    ${'DRAW'}   | ${DRAW_BAORD}                                    | ${'draw game'}
+    ${'X_TURN'} | ${['X', 'O', ' ', 'X', ' ', ' ', 'O', ' ', ' ']} | ${'X is next to take a move'}
   `(
     'should return status of $status for $condition where the board is filled out as $squares',
     ({ status, squares }) => {
