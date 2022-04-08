@@ -266,3 +266,13 @@ Then the board is printed
   | ["X", "O", " ", "X", " ", " ", "O", " ", " "] | X    |
   | [" ", "X", "O", "X", "O", " ", " ", "X", " "] | O    |
 ```
+
+## Pomodoro 14
+
+- 🚧 TD10: extract out the completexity from getGameStatus
+- ⚠ TD11: rmeove this.nextPlayer
+
+## Pomodoro 15
+
+- 🚧 TD10: extract out the completexity from getGameStatus
+- ⚠ TD11: rmeove this.nextPlayer

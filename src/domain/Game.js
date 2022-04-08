@@ -23,6 +23,10 @@ class Game {
     return this.getStepCount() % 2 === 0 ? this.PLAYER_X : this.PLAYER_O;
   }
 
+  getCurrentPlayer() {
+    return (this.getStepCount() - 1) % 2 === 0 ? this.PLAYER_X : this.PLAYER_O;
+  }
+
   getStepCount() {
     return this.getBoardState().filter((square) => square !== ' ').length;
   }
@@ -53,33 +57,48 @@ class Game {
     );
   }
 
-  getGameStatus() {
+  getColumnWinners() {
+    return (
+      this.doMarksMatch(LEFT_COLUMN) ||
+      this.doMarksMatch(MIDDLE_COLUMN) ||
+      this.doMarksMatch(RGHT_COLUMN)
+    );
+  }
+
+  getRowWinners() {
+    return (
+      this.doMarksMatch(TOP_ROW) ||
+      this.doMarksMatch(MIDDLE_ROW) ||
+      this.doMarksMatch(BOTTOM_ROW)
+    );
+  }
+
+  getDiagonalWinners() {
+    return (
+      this.doMarksMatch(FORWARD_DIAGONAL) ||
+      this.doMarksMatch(BACKWARD_DIAGONAL)
+    );
+  }
+
+  getWinner() {
+    return (
+      this.getColumnWinners() ||
+      this.getRowWinners() ||
+      this.getDiagonalWinners()
+    );
+  }
+
+  hasRemainingMoves() {
     const squares = this.board.getSquares();
-    if (this.doMarksMatch(LEFT_COLUMN)) {
-      return `${squares[0]}_WON`;
+
+    return squares.includes(' ');
+  }
+
+  getGameStatus() {
+    if (this.getWinner()) {
+      return `${this.getCurrentPlayer()}_WON`;
     }
-    if (this.doMarksMatch(MIDDLE_COLUMN)) {
-      return `${squares[3]}_WON`;
-    }
-    if (this.doMarksMatch(RGHT_COLUMN)) {
-      return `${squares[6]}_WON`;
-    }
-    if (this.doMarksMatch(TOP_ROW)) {
-      return `${squares[0]}_WON`;
-    }
-    if (this.doMarksMatch(MIDDLE_ROW)) {
-      return `${squares[1]}_WON`;
-    }
-    if (this.doMarksMatch(BOTTOM_ROW)) {
-      return `${squares[2]}_WON`;
-    }
-    if (this.doMarksMatch(BACKWARD_DIAGONAL)) {
-      return `${squares[0]}_WON`;
-    }
-    if (this.doMarksMatch(FORWARD_DIAGONAL)) {
-      return `${squares[2]}_WON`;
-    }
-    if (squares.includes(' ')) {
+    if (this.hasRemainingMoves()) {
       return `${this.getNextPlayer()}_TURN`;
     }
 
