@@ -20,11 +20,11 @@ class Game {
   }
 
   getNextPlayer() {
-    return this.getBoardState().filter((square) => square !== ' ').length %
-      2 ===
-      0
-      ? this.PLAYER_X
-      : this.PLAYER_O;
+    return this.getStepCount() % 2 === 0 ? this.PLAYER_X : this.PLAYER_O;
+  }
+
+  getStepCount() {
+    return this.getBoardState().filter((square) => square !== ' ').length;
   }
 
   fillSquare(position, marker) {
