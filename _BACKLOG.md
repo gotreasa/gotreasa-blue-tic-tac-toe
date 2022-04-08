@@ -134,3 +134,15 @@ Then the board is printed
   | ["X", "O", " ", "X", " ", " ", "O", " ", " "] | X    |
   | [" ", "X", "O", "X", "O", " ", " ", "X", " "] | O    |
 ```
+
+### ⚠ US8 - Bot versus Bot playing the game
+
+#### ⚠ UAT8.1 - Bot makes a move
+
+```
+  Given a new game
+  And a bot
+  And steps already taken <steps>
+  When stepping with the bot
+  Then the bot moves to an empty square
+```

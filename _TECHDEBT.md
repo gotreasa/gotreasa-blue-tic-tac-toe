@@ -10,6 +10,6 @@
 - ✅ TD8: Update fillSquares to use getNextPlayer()
 - ✅ TD9: extract squares into board class
 - ✅ TD10: extract out the completexity from getGameStatus
-- 🚧 TD11: rmeove this.nextPlayer
+- ✅ TD11: rmeove this.nextPlayer
 - ⚠ TD12: get rid of fillSquares
 - ⚠ TD13: move PLAYER_X and PLAYER_O constants to Player class?
