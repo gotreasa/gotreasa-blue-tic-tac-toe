@@ -20,14 +20,11 @@ class Game {
   }
 
   getNextPlayer() {
-    if (this.nextPlayer === this.PLAYER_X) {
-      this.nextPlayer = this.PLAYER_O;
-
-      return this.PLAYER_X;
-    }
-    this.nextPlayer = this.PLAYER_X;
-
-    return this.PLAYER_O;
+    return this.getBoardState().filter((square) => square !== ' ').length %
+      2 ===
+      0
+      ? this.PLAYER_X
+      : this.PLAYER_O;
   }
 
   fillSquare(position, marker) {
@@ -83,7 +80,7 @@ class Game {
       return `${squares[2]}_WON`;
     }
     if (squares.includes(' ')) {
-      return `X_TURN`;
+      return `${this.getNextPlayer()}_TURN`;
     }
 
     return 'DRAW';
