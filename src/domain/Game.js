@@ -96,13 +96,21 @@ class Game {
 
   getGameStatus() {
     if (this.getWinner()) {
-      return `${this.getCurrentPlayer()}_WON`;
+      return this.getWinnerState();
     }
     if (this.hasRemainingMoves()) {
-      return `${this.getNextPlayer()}_TURN`;
+      return this.getNextTurnState();
     }
 
     return 'DRAW';
+  }
+
+  getNextTurnState() {
+    return `${this.getNextPlayer()}_TURN`;
+  }
+
+  getWinnerState() {
+    return `${this.getCurrentPlayer()}_WON`;
   }
 }
 
