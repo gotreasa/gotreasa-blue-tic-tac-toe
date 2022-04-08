@@ -225,3 +225,28 @@ Then the board is printed
 ```
 
 - 🚧 Refactor the Game status
+
+## Pomodoro 12
+
+- 🚧 UAT6.1 - Game end in a draw
+
+```
+  Given a new game
+  And the squares are marked as follows <squares>
+  When the game status is checked
+  Then game ends in a draw
+```
+
+- ⚠ UAT7.1 - Next turn status
+
+```
+  Given a new game
+  And the squares are marked as follows <squares>
+  When the game status is checked
+  Then <mark> is next to take a turn
+
+  Examples:
+  | squares                                       | mark |
+  | ["X", "O", " ", "X", " ", " ", "O", " ", " "] | X    |
+  | [" ", "X", "O", "X", "O", " ", " ", "X", " "] | O    |
+```

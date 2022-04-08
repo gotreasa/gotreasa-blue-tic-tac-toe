@@ -34,3 +34,13 @@ Then <mark> has won
   | squares                                       | mark | direction |
   | ["X", "O", " ", " ", "X", " ", "O", " ", "X"] | X    | Backward  |
   | [" ", "X", "O", "X", "O", " ", "O", "X", " "] | O    | Forward   |
+
+Scenario Outline: Game ends in a draw
+Given a new game
+And the squares are marked as follows <squares>
+When the game status is checked
+Then game ends in a draw
+
+  Examples:
+  | squares                                       |
+  | ["X", "O", "X", "X", "O", "X", "O", "X", "O"] |
