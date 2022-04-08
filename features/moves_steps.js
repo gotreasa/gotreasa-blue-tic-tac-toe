@@ -38,12 +38,13 @@ Then("it's player X turn", () => {
   expect(output).toBe('X');
 });
 
-And(/^the next mark is (.*)$/, (nextMark) => {
-  game.nextPlayer = nextMark;
+And(/^the step count is (.*)$/, (stepCount) => {
+  game.getStepCount = jest.fn();
+  game.getStepCount.mockReturnValue(stepCount);
 });
 
-Then(/^the next mark is updated to (.*)$/, (futureMark) => {
-  expect(game.nextPlayer).toBe(futureMark);
+Then(/^the next mark is (.*)$/, (nextMark) => {
+  expect(game.getNextPlayer()).toBe(nextMark);
 });
 
 Fusion('moves.feature');
