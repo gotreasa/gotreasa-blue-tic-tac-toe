@@ -8,6 +8,7 @@ const {
   RIGHT_COLUMN_X_WIN,
   BACKWARD_DIAGONAL_X_WIN,
   FORWARD_DIAGONAL_O_WIN,
+  DRAW_BAORD,
 } = require('../constants/boardSquares');
 
 const EMPTY_SQUARES = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
@@ -77,6 +78,7 @@ describe('Existing game', () => {
     ${'X_WON'} | ${RIGHT_COLUMN_X_WIN}      | ${'right column win'}
     ${'X_WON'} | ${BACKWARD_DIAGONAL_X_WIN} | ${'back diagonal win'}
     ${'O_WON'} | ${FORWARD_DIAGONAL_O_WIN}  | ${'forward diagonal win'}
+    ${'DRAW'}  | ${DRAW_BAORD}              | ${'draw game'}
   `(
     'should return status of $status for $condition where the board is filled out as $squares',
     ({ status, squares }) => {
