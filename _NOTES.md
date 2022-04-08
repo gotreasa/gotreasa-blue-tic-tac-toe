@@ -274,5 +274,5 @@ Then the board is printed
 
 ## Pomodoro 15
 
-- 🚧 TD10: extract out the completexity from getGameStatus
-- ⚠ TD11: rmeove this.nextPlayer
+- ✅ TD10: extract out the completexity from getGameStatus
+- ip TD11: rmeove this.nextPlayer

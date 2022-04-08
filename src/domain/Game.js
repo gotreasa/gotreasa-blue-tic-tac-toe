@@ -16,7 +16,6 @@ class Game {
     this.board.squares = new Array(9).fill(' ');
     this.PLAYER_X = 'X';
     this.PLAYER_O = 'O';
-    this.nextPlayer = this.PLAYER_X;
   }
 
   getNextPlayer() {
