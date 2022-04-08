@@ -119,9 +119,9 @@ Then the board is printed
   Then game ends in a draw
 ```
 
-### 🚧 US7 - Next turn status
+### ✅ US7 - Next turn status
 
-#### 🚧 UAT7.1 - Next turn status
+#### ✅ UAT7.1 - Next turn status
 
 ```
   Given a new game

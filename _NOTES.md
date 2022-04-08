@@ -253,7 +253,7 @@ Then the board is printed
 
 ## Pomodoro 13
 
-- 🚧 UAT7.1 - Next turn status
+- ✅ UAT7.1 - Next turn status
 
 ```
   Given a new game
