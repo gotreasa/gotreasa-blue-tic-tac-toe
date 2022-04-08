@@ -28,4 +28,8 @@ Then(/^(.*) has won$/, (mark) => {
   expect(output).toBe(`${mark}_WON`);
 });
 
+Then('game ends in a draw', () => {
+  expect(output).toBe(`DRAW`);
+});
+
 Fusion('gameStatuses.feature');
