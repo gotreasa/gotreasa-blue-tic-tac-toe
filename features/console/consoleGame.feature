@@ -19,3 +19,8 @@ Feature: Console Game
         Given a new console game
         When playing the game
         Then the game status is printed after each move
+
+    Scenario: The game pauses between each step
+        Given a new console game
+        When playing the game
+        Then there is a 2 second pause between each step

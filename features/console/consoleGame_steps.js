@@ -13,6 +13,8 @@ let consoleRenderer;
 let consoleGame;
 
 console.log = jest.fn();
+jest.useFakeTimers();
+jest.spyOn(global, 'setTimeout');
 
 Given('a new consoleRenderer', () => {
   consoleRenderer = new ConsoleRenderer();
@@ -49,6 +51,13 @@ Then('the board is printed after each move', () => {
 Then('the game status is printed after each move', () => {
   expect(console.log).toHaveBeenCalledWith(
     expect.stringContaining('Player X, it is your turn'),
+  );
+});
+
+Then(/^there is a (\d+) second pause between each step$/, (expectedSeconds) => {
+  expect(setTimeout).toHaveBeenCalledWith(
+    expect.anything(),
+    expectedSeconds * 1000,
   );
 });
 

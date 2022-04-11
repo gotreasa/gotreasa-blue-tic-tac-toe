@@ -393,10 +393,18 @@ Then the bot moves to an empty square <position>
 
 ## Pomodoro 24
 
-- 🚧 UAT9.3 - The latest status is printed after each move
+- ✅ UAT9.3 - The latest status is printed after each move
 
 ```
   Given a new console game
   When playing the game
   Then the game status is printed after each step
+```
+
+- 🚧 UAT9.4 - The game pauses between each step
+
+```
+  Given a new console game
+  When playing the game
+  Then there is a 2 second pause between each step
 ```
