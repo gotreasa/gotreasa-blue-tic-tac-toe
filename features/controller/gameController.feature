@@ -10,4 +10,4 @@ Feature: Controller manage the bot versus bot game
         Examples:
             | steps                                          |
             | ["X", "O", " ", " ", " ", " ", " ", " ", " " ] |
-            # | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] |
+            | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] |
