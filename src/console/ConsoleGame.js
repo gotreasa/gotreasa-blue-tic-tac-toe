@@ -1,6 +1,12 @@
 const { GameController } = require('../controller/GameController');
 const { ConsoleRenderer } = require('./ConsoleRenderer');
 
+const wait = async (durationInMilliseconds) => {
+  await new Promise((resolve) => {
+    setTimeout(resolve, durationInMilliseconds);
+  });
+};
+
 class ConsoleGame {
   constructor() {
     this.controller = new GameController();
@@ -10,6 +16,7 @@ class ConsoleGame {
   play() {
     this.renderer.print();
     this.controller.move();
+    wait(2000);
   }
 }
 module.exports = {
