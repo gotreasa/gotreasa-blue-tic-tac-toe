@@ -1,4 +1,4 @@
-const GameController = require('../../src/controller/GameController');
+const { GameController } = require('../../src/controller/GameController');
 const { EMPTY_BOARD } = require('../constants/boardSquares');
 
 describe('Game controller', () => {
@@ -12,23 +12,21 @@ describe('Game controller', () => {
   });
 
   afterEach(() => {
-    gameController.game.getBoardState.mockResest();
-    gameController.bot.getNextMove.mockResest();
-    gameController.game.fillSquare.mockResest();
+    gameController.game.getBoardState.mockReset();
+    gameController.bot.getNextMove.mockReset();
+    gameController.game.fillSquare.mockReset();
   });
 
   test.each`
-    board          | movePosition | expectedMark
-    ${EMPTY_BOARD} | ${2}         | ${'X'}
+    board          | movePosition
+    ${EMPTY_BOARD} | ${2}
   `(
     'should have bot place mark $expectedMark in postion $markPosition for $board',
-    ({ board, movePosition, expectedMark }) => {
+    ({ board, movePosition }) => {
       gameController.game.getBoardState.mockReturnValue(board);
       gameController.bot.getNextMove.mockReturnValue(movePosition);
-      expect(gameController.game.fillSquare).toHaveBeenCalledWith(
-        expectedMark,
-        movePosition,
-      );
+      gameController.getNextMove();
+      expect(gameController.getNextMove()).toBe(2);
     },
   );
 });
