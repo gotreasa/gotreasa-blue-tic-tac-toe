@@ -1,15 +1,24 @@
 const { Game } = require('../domain/Game');
 
+const GAME_STATUS = {
+  X_TURN: 'Player X, it is your turn!',
+  O_TURN: 'Player O, it is your turn!',
+};
+
 class ConsoleRenderer {
   constructor(game = new Game()) {
     this.game = game;
+  }
+
+  getGameStatus() {
+    return GAME_STATUS[this.game.getGameStatus()];
   }
 
   print() {
     this.game.output = `Game Board Creation…
 ${this.getGrid()}
 Board Created.
-Player X, it is your turn.`;
+${this.getGameStatus()}`;
     console.log(this.game.output);
   }
 

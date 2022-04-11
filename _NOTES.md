@@ -390,3 +390,13 @@ Then the bot moves to an empty square <position>
   When playing the game
   Then the game status is printed after each step
 ```
+
+## Pomodoro 24
+
+- 🚧 UAT9.3 - The latest status is printed after each move
+
+```
+  Given a new console game
+  When playing the game
+  Then the game status is printed after each step
+```
