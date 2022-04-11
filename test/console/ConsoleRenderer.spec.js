@@ -38,3 +38,28 @@ describe('Starting a ConsoleRenderer', () => {
     expect(consoleRenderer.getGrid()).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
   });
 });
+
+describe('Printing the state of the game', () => {
+  let consoleRenderer;
+
+  beforeEach(() => {
+    consoleRenderer = new ConsoleRenderer();
+    consoleRenderer.game.board.getSquares = jest.fn();
+
+    console.log = jest.fn();
+  });
+
+  test.each`
+    status      | expectedStatus
+    ${'X_TURN'} | ${'Player X, it is your turn'}
+  `(
+    'should include the game status as "$expectedStatus" when the game status is $status',
+    ({ status, expectedStatus }) => {
+      consoleRenderer.game.getStatus.mockReturnValue(status);
+      consoleRenderer.print();
+      expect(console.log).toHaveBeenCalledWith(
+        expect.stringContaining(expectedStatus),
+      );
+    },
+  );
+});
