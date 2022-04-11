@@ -9,12 +9,14 @@ describe('Game controller', () => {
     gameController.game.getBoardState = jest.fn();
     gameController.bot.getNextMove = jest.fn();
     gameController.game.fillSquare = jest.fn();
+    gameController.game.getNextPlayer = jest.fn();
   });
 
   afterEach(() => {
     gameController.game.getBoardState.mockReset();
     gameController.bot.getNextMove.mockReset();
     gameController.game.fillSquare.mockReset();
+    gameController.game.getNextPlayer.mockReset();
   });
 
   test.each`
@@ -32,13 +34,15 @@ describe('Game controller', () => {
   );
 
   test.each`
-    board          | movePosition | expectedMark
-    ${EMPTY_BOARD} | ${2}         | ${'X'}
+    board                                            | movePosition | expectedMark
+    ${EMPTY_BOARD}                                   | ${2}         | ${'X'}
+    ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${3}         | ${'O'}
   `(
     'should have bot place mark $expectedMark in postion $markPosition for $board',
     ({ board, movePosition, expectedMark }) => {
       gameController.game.getBoardState.mockReturnValue(board);
       gameController.bot.getNextMove.mockReturnValue(movePosition);
+      gameController.game.getNextPlayer.mockReturnValue(expectedMark);
       gameController.move();
       expect(gameController.game.fillSquare).toHaveBeenCalledWith(
         movePosition,
