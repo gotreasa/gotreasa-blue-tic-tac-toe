@@ -9,3 +9,8 @@ Feature: Console Game
         Given a new console game
         When playing the game
         Then the bot is taking steps one at a time
+
+    Scenario: The board is printed after each move
+        Given a new console game
+        When playing the game
+        Then the board is printed after each move

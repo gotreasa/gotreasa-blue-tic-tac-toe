@@ -41,4 +41,10 @@ Then('the bot is taking steps one at a time', () => {
   expect(consoleGame.controller.move).toHaveBeenCalled();
 });
 
+Then('the board is printed after each move', () => {
+  consoleGame.renderer.print = jest.fn();
+  expect(consoleGame.renderer.print).toHaveBeenCalled();
+  consoleGame.renderer.print.mockReset();
+});
+
 Fusion('consoleGame.feature');

@@ -365,10 +365,18 @@ Then the bot moves to an empty square <position>
 
 ## Pomodoro 22
 
-- 🚧 UAT9.1 - Making the moves
+- ✅ UAT9.1 - Making the moves
 
 ```
   Given a new console game
   When playing the game
   Then the bot is taking steps one at a time
+```
+
+- 🚧 UAT9.2 - The board is printed after each move
+
+```
+  Given a new console game
+  When playing the game
+  Then the board is printed after each step
 ```
