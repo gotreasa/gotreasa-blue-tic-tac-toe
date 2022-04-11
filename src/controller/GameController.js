@@ -8,9 +8,7 @@ class GameController {
   }
 
   getNextMove() {
-    console.log(this);
-
-    return 2;
+    return this.bot.getNextMove();
   }
 }
 module.exports = {

@@ -5,9 +5,9 @@ Feature: Controller manage the bot versus bot game
         Given a new game controller
         And steps already taken <steps>
         When stepping with the bot
-        Then the bot moves to an empty square <position>
+        Then the bot moves to an empty square
 
         Examples:
-            | steps                                          | position |
-            | ["X", "O", " ", " ", " ", " ", " ", " ", " " ] | 3        |
-            # | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] | 6        |
+            | steps                                          |
+            | ["X", "O", " ", " ", " ", " ", " ", " ", " " ] |
+            # | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] |

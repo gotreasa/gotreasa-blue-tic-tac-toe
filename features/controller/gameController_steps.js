@@ -9,7 +9,7 @@ const {
 const { GameController } = require('../../src/controller/GameController');
 
 let gameController;
-let output;
+let step;
 
 Given('a new game controller', () => {
   gameController = new GameController();
@@ -21,11 +21,11 @@ And(/^steps already taken (.*)$/, (stepsString) => {
 });
 
 When('stepping with the bot', () => {
-  output = gameController.getNextMove();
+  step = gameController.getNextMove();
 });
 
-Then(/^the bot moves to an empty square (.*)$/, (position) => {
-  expect(output).toBe(position);
+Then(/^the bot moves to an empty square$/, () => {
+  expect(gameController.game.getBoardState()[step]).toBe(' ');
 });
 
 Fusion('gameController.feature');
