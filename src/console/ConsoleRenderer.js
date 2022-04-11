@@ -4,6 +4,7 @@ const GAME_STATUS = {
   X_TURN: 'Player X, it is your turn!',
   O_TURN: 'Player O, it is your turn!',
   O_WON: 'Player O won!',
+  X_WON: 'Player X won!',
 };
 
 class ConsoleRenderer {
