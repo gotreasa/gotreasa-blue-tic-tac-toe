@@ -48,7 +48,7 @@ Then('the board is printed after each move', () => {
 
 Then('the game status is printed after each move', () => {
   expect(console.log).toHaveBeenCalledWith(
-    expect.stringContaining('Player X has the next move'),
+    expect.stringContaining('Player X, it is your turn'),
   );
 });
 
