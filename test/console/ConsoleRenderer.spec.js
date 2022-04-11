@@ -44,7 +44,7 @@ describe('Printing the state of the game', () => {
 
   beforeEach(() => {
     consoleRenderer = new ConsoleRenderer();
-    consoleRenderer.game.board.getSquares = jest.fn();
+    consoleRenderer.game.getGameStatus = jest.fn();
 
     console.log = jest.fn();
   });
@@ -55,7 +55,7 @@ describe('Printing the state of the game', () => {
   `(
     'should include the game status as "$expectedStatus" when the game status is $status',
     ({ status, expectedStatus }) => {
-      consoleRenderer.game.getStatus.mockReturnValue(status);
+      consoleRenderer.game.getGameStatus.mockReturnValue(status);
       consoleRenderer.print();
       expect(console.log).toHaveBeenCalledWith(
         expect.stringContaining(expectedStatus),

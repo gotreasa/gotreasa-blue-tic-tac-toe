@@ -7,12 +7,10 @@ class ConsoleRenderer {
 
   print() {
     this.game.output = `Game Board Creation…
-      ${this.getGrid()}
-      Board Created.
-      The game will start with player X`;
+${this.getGrid()}
+Board Created.
+Player X, it is your turn.`;
     console.log(this.game.output);
-
-    return this.game.output;
   }
 
   getGrid() {
