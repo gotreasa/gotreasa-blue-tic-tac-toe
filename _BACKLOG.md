@@ -146,3 +146,71 @@ Then the board is printed
   When stepping with the bot
   Then the bot moves to an empty square
 ```
+
+### ⚠ US9 - Console running the game
+
+#### ⚠ UAT9.1 - Making the moves
+
+```
+  Given a new console game
+  When playing the game
+  Then the bot is taking steps one at a time
+```
+
+#### ⚠ UAT9.2 - The board is printed after each move
+
+```
+  Given a new console game
+  When playing the game
+  Then the board is printed after each step
+```
+
+#### ⚠ UAT9.3 - The latest status is printed after each move
+
+```
+  Given a new console game
+  When playing the game
+  Then the game status is printed after each step
+```
+
+#### ⚠ UAT9.4 - The game pauses between each step
+
+```
+  Given a new console game
+  When playing the game
+  Then there is a 2 second pause between each step
+```
+
+#### ⚠ UAT9.5 - The game ends when an end game status is reached
+
+```
+  Given a new console game
+  When playing the game
+  Then the game ends when an end game status is reached
+```
+
+### ⚠ US10 - Bot versus API
+
+#### ⚠ UAT10.1 - API health
+
+```
+  Given an API consumer
+  When the health is checked
+  Then HTTP OK is returned
+```
+
+#### ⚠ UAT10.2 - The board moves are returned
+
+```
+  Given an API consumer
+  When the game endpoint is called
+  Then board representation of each move is returned
+```
+
+#### ⚠ UAT10.2 - The game status is returned for each move
+
+```
+  Given an API consumer
+  When the game endpoint is called
+  Then the game status for each move is returned
+```

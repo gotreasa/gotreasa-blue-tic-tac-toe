@@ -281,3 +281,7 @@ Then the board is printed
 ## Pomodoro 16
 
 - ✅ TD14: fix up the Pact verification on PactFlow
+
+## Pomodoro 17
+
+- ✅ Create the rest of the backlog for the API and console
