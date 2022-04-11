@@ -1,5 +1,6 @@
 const {
   Given,
+  And,
   When,
   Then,
   Fusion,
@@ -58,6 +59,18 @@ Then(/^there is a (\d+) second pause between each step$/, (expectedSeconds) => {
   expect(setTimeout).toHaveBeenCalledWith(
     expect.anything(),
     expectedSeconds * 1000,
+  );
+});
+
+And(/^the game status is (.*)$/, (arg0) => {
+  consoleGame.controller.game.getGameStatus = jest.fn();
+  consoleGame.controller.game.getGameStatus.mockReturnValue(arg0);
+  consoleGame.controller.game.getGameStatus.mockReset();
+});
+
+Then(/^the game ends with the status (.*)$/, (endGameStatus) => {
+  expect(console.log).toHaveBeenCalledWith(
+    expect.stringContaining(endGameStatus),
   );
 });
 

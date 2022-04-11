@@ -169,7 +169,7 @@ Then the bot moves to an empty square <position>
   Then the board is printed after each step
 ```
 
-#### 🚧 UAT9.3 - The latest status is printed after each move
+#### ✅ UAT9.3 - The latest status is printed after each move
 
 ```
   Given a new console game
@@ -177,7 +177,7 @@ Then the bot moves to an empty square <position>
   Then the game status is printed after each step
 ```
 
-#### ⚠ UAT9.4 - The game pauses between each step
+#### ✅ UAT9.4 - The game pauses between each step
 
 ```
   Given a new console game
@@ -185,7 +185,7 @@ Then the bot moves to an empty square <position>
   Then there is a 2 second pause between each step
 ```
 
-#### ⚠ UAT9.5 - The game ends when an end game status is reached
+#### 🚧 UAT9.5 - The game ends when an end game status is reached
 
 ```
   Given a new console game

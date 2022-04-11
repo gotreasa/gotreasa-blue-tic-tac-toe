@@ -24,3 +24,14 @@ Feature: Console Game
         Given a new console game
         When playing the game
         Then there is a 2 second pause between each step
+
+    Scenario Outline: The game ends when an end game status <endStatus> is reached
+        Given a new console game
+        And the game status is <gameStatus>
+        When playing the game
+        Then the game ends with the status <humanReadableStatus>
+        Examples:
+            | endStatus | humanReadableStatus           |
+            | X_WIN     | Player X won!                 |
+            # | O_WIN     | Player O won!                 |
+            # | DRAW      | The game has ended in a draw! |

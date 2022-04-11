@@ -401,10 +401,20 @@ Then the bot moves to an empty square <position>
   Then the game status is printed after each step
 ```
 
-- 🚧 UAT9.4 - The game pauses between each step
+- ✅ UAT9.4 - The game pauses between each step
 
 ```
   Given a new console game
   When playing the game
   Then there is a 2 second pause between each step
+```
+
+## Pomodoro 25
+
+- 🚧 UAT9.5 - The game ends when an end game status is reached
+
+```
+  Given a new console game
+  When playing the game
+  Then the game ends when an end game status is reached
 ```
