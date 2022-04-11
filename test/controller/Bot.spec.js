@@ -14,6 +14,7 @@ describe('Game bot', () => {
     board                                            | position | positionGuesses
     ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${3}     | ${[3]}
     ${['X', 'O', ' ', ' ', 'X', ' ', ' ', ' ', ' ']} | ${6}     | ${[6]}
+    ${['X', 'O', ' ', ' ', 'X', 'X', ' ', ' ', ' ']} | ${8}     | ${[1, 2, 5, 6]}
   `(
     'should move to empty position $position for board $board',
     ({ board, position, positionGuesses }) => {
