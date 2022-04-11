@@ -3,6 +3,7 @@ const { Game } = require('../domain/Game');
 const GAME_STATUS = {
   X_TURN: 'Player X, it is your turn!',
   O_TURN: 'Player O, it is your turn!',
+  O_WON: 'Player O won!',
 };
 
 class ConsoleRenderer {
