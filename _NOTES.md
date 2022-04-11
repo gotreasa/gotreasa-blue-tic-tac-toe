@@ -285,3 +285,24 @@ Then the board is printed
 ## Pomodoro 17
 
 - ✅ Create the rest of the backlog for the API and console
+
+## Pomodoro 18
+
+- ✅ TD15: Update the jest config to prevent it causing problems when the pact files are updated
+- ⚠ UAT8.1 - Bot makes a move
+
+```
+  Given a new game
+  And a bot
+  And steps already taken <steps>
+  When stepping with the bot
+  Then the bot moves to an empty square
+```
+
+- ⚠ UAT9.1 - Making the moves
+
+```
+  Given a new console game
+  When playing the game
+  Then the bot is taking steps one at a time
+```
