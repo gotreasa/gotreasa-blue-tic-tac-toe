@@ -12,7 +12,9 @@ class GameController {
   }
 
   move() {
-    this.game.fillSquare(this.getNextMove(), 'X');
+    const marker = this.game.getNextPlayer();
+    const emptyPosition = this.getNextMove();
+    this.game.fillSquare(emptyPosition, marker);
   }
 }
 module.exports = {
