@@ -1,8 +1,13 @@
 class Bot {
-  getNextMove() {
-    console.log(this);
+  constructor(game) {
+    this.game = game;
+  }
 
-    return 3;
+  getNextMove() {
+    const position = Math.floor(Math.random() * 9);
+    console.log('The position', this.game.getBoardState()[position]);
+
+    return position;
   }
 }
 module.exports = {
