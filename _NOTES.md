@@ -336,3 +336,19 @@ Then the board is printed
   When playing the game
   Then the bot is taking steps one at a time
 ```
+
+## Pomodoro 20
+
+- 🚧 UAT8.1 - Bot makes a move
+
+```
+Given a new game controller
+And steps already taken <steps>
+When stepping with the bot
+Then the bot moves to an empty square <position>
+
+        Examples:
+            | steps                                          | position |
+            | ["X", "O", " ", " ", " ", " ", " ", " ", " " ] | 3        |
+            | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] | 6        |
+```

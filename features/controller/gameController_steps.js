@@ -17,7 +17,7 @@ Given('a new game controller', () => {
 
 And(/^steps already taken (.*)$/, (stepsString) => {
   const steps = JSON.parse(stepsString);
-  gameController.game.fillSquares(steps);
+  gameController.game.board.squares = steps;
 });
 
 When('stepping with the bot', () => {

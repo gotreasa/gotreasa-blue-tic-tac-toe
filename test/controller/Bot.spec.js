@@ -22,7 +22,6 @@ describe('Game bot', () => {
       const bot = new Bot(game);
       game.getBoardState = jest.fn(() => board);
       positionGuesses.forEach((positionGuess) => {
-        console.log('guess', positionGuess);
         Math.random.mockReturnValueOnce(positionGuess / 9);
       });
       expect(bot.getNextMove()).toBe(position);

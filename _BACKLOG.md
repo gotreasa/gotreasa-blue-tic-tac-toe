@@ -140,11 +140,10 @@ Then the board is printed
 #### 🚧 UAT8.1 - Bot makes a move
 
 ```
-  Given a new game
-  And a bot
-  And steps already taken <steps>
-  When stepping with the bot
-  Then the bot moves to an empty square <position>
+Given a new game controller
+And steps already taken <steps>
+When stepping with the bot
+Then the bot moves to an empty square <position>
 
         Examples:
             | steps                                          | position |
