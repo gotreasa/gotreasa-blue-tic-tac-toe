@@ -53,6 +53,7 @@ describe('Printing the state of the game', () => {
     status      | expectedStatus
     ${'X_TURN'} | ${'Player X, it is your turn'}
     ${'O_TURN'} | ${'Player O, it is your turn'}
+    ${'O_WON'}  | ${'Player O won!'}
   `(
     'should include the game status as "$expectedStatus" when the game status is $status',
     ({ status, expectedStatus }) => {
