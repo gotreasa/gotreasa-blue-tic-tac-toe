@@ -41,8 +41,8 @@ describe('Game controller', () => {
       gameController.bot.getNextMove.mockReturnValue(movePosition);
       gameController.move();
       expect(gameController.game.fillSquare).toHaveBeenCalledWith(
-        expectedMark,
         movePosition,
+        expectedMark,
       );
     },
   );

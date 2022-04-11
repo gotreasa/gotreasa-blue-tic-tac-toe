@@ -10,6 +10,10 @@ class GameController {
   getNextMove() {
     return this.bot.getNextMove();
   }
+
+  move() {
+    this.game.fillSquare(this.getNextMove(), 'X');
+  }
 }
 module.exports = {
   GameController,
