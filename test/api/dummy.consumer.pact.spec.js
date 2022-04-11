@@ -1,17 +1,27 @@
 const { pactWith } = require('jest-pact');
+const { versionFromGitTag } = require('@pact-foundation/absolute-version');
 const axios = require('axios');
-
-const port = 9999;
-const instance = axios.create({
-  baseURL: `http://localhost:9999`,
-});
 
 const OK = 200;
 
 pactWith(
-  { port, consumer: 'dummy_client', provider: 'dummy_app' },
+  {
+    consumer: 'dummy_client',
+    provider: 'dummy_app',
+    pactBroker: 'https://gotreasa.pact.dius.com.au/',
+    pactBrokerToken: process.env.PACT_BROKER_TOKEN,
+    consumerVersion: versionFromGitTag(),
+  },
   (provider) => {
     describe('dummmy API', () => {
+      let instance;
+
+      beforeAll(() => {
+        instance = axios.create({
+          baseURL: provider.mockService.baseUrl,
+        });
+      });
+
       beforeEach(() => {
         return provider.addInteraction({
           state: 'Initial state',

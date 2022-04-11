@@ -277,3 +277,7 @@ Then the board is printed
 - ✅ TD10: extract out the completexity from getGameStatus
 - ✅ TD11: rmeove this.nextPlayer
 - 🚧 Develop backlog for Bot playing against Bot
+
+## Pomodoro 16
+
+- ✅ TD14: fix up the Pact verification on PactFlow

@@ -39,6 +39,7 @@ jobs:
       env: step=Run tests and Sonar Scanner
       name: Run tests and Sonar Scanner
       script:
+        - touch .env
         - npm test
         - sonar-scanner
     - env: step=Run contract tests
@@ -48,6 +49,13 @@ jobs:
       script:
         - npm run build:postman
         - npm run test:api
+    - env: step=Run Pact tests
+      name: Run Pact tests
+      script:
+        - touch .env
+        - npm run test:api:consumer
+        - npm run publish:pact
+        - export CI=true && npm run test:api:provider
     - stage: Build
       env: step=Build and Publish image
       name: Build and Publish image
@@ -71,4 +79,6 @@ jobs:
 env:
   global:
     # SYNK_TOKEN
-    secure: 'tqaAOrprSrFPx1rEWdPY4MkQ7+GjncNb/cZVtIjmGDl5YcNna/TtC/4TkEtXG4/1M6etMrxxEKQbS3SrQP9dBvAGyPnhy9NuTZktB143wePGbGzdRbIiKarvTZl38sWkpyn7oIgltFKImSszYxUQBhw6RUseFLWHNq4eejn1idbkRLNrmK0cdUOH5IwQB/yB5TaRRxFZiYOXMgf/HvVgnln2hozSTvcY30Dy59qrz4bZqQwvyqa3wk5TRjhQI/1KEDAfK2i/yHiYUZ6f96YJZ2qfHCInJExBWuO0ZQ0MGhkYdRiGNfJODJ5srIjHgpel72c+rSv6CdampQo8R8MpCyaCgRjQUQzml9x0oQI3sbk8UJRafaDkpgTMlg7Eka+qBdB6sZP2QbJvZoKrAraT6NpLp8vyxF1df5uvdrN91wvT6orzIQ0QGRVyT2YYcvYHwf0XGTloJVHSDK53bc1GpNYU3UHIt+6a6UqmxTeQRSU7CC3r06CC2XHvsRPEF7hI+0+2UQqTsd2vLF2ECjHJoDl3aTCi/sLaSvMqidwF8Z6hFO9Gn7rfgrCI4oZpNTBOJxrg7TmdUOq+U95Z+NsN4YV8DgqXElt6R7EIF8E0/6MWeKCZopEbnvG6jjDEbLhawBkU6nvw209Mhw9gwFNgJ9tD4frMSE1vbJX7iKq6LnU='
+    - secure: 'tqaAOrprSrFPx1rEWdPY4MkQ7+GjncNb/cZVtIjmGDl5YcNna/TtC/4TkEtXG4/1M6etMrxxEKQbS3SrQP9dBvAGyPnhy9NuTZktB143wePGbGzdRbIiKarvTZl38sWkpyn7oIgltFKImSszYxUQBhw6RUseFLWHNq4eejn1idbkRLNrmK0cdUOH5IwQB/yB5TaRRxFZiYOXMgf/HvVgnln2hozSTvcY30Dy59qrz4bZqQwvyqa3wk5TRjhQI/1KEDAfK2i/yHiYUZ6f96YJZ2qfHCInJExBWuO0ZQ0MGhkYdRiGNfJODJ5srIjHgpel72c+rSv6CdampQo8R8MpCyaCgRjQUQzml9x0oQI3sbk8UJRafaDkpgTMlg7Eka+qBdB6sZP2QbJvZoKrAraT6NpLp8vyxF1df5uvdrN91wvT6orzIQ0QGRVyT2YYcvYHwf0XGTloJVHSDK53bc1GpNYU3UHIt+6a6UqmxTeQRSU7CC3r06CC2XHvsRPEF7hI+0+2UQqTsd2vLF2ECjHJoDl3aTCi/sLaSvMqidwF8Z6hFO9Gn7rfgrCI4oZpNTBOJxrg7TmdUOq+U95Z+NsN4YV8DgqXElt6R7EIF8E0/6MWeKCZopEbnvG6jjDEbLhawBkU6nvw209Mhw9gwFNgJ9tD4frMSE1vbJX7iKq6LnU='
+    # PACT_BROKER_TOKEN
+    - secure: 'TDL/IHNUE6moIvAQWi51kkCLJQQbWl5g/Hzl5keLzsyi2zf2H87BVSaD11oHjhyF46KM/Xw/uEfGbOxWigmTE1f/2PpIuBOemNpfoVZxBQ2qXTu5QSMMZnxm/k2UYMPnlJX+/9JztNkyxl7q5mvVu1qKSVKCcsI+ked8phs99HavHKMxexFrVR7Ngbg1UtNAnb575amPs2vjj/vwjOsvBuh/jlJcxoOhFuFAnkL9ROv9ChZqxiwEl/H2mTG0jbpJMvAWyttPNgH74W40+yqZBhE+PCmBe6JbTAp+b/NF3ey1MpO8oJmPL8rYAT7BgCPAw30YcyS9qcVAdZ7iyfrQBoPINvR9PGWOXd6l3TOXDbvUTbVAdajze6nP+Wx0TOav1Ij+dIFq9EXiRAkpjbutHGwSPzui+EhCJXHgTB2Rdp/7laxz82LgKCKTImW0vEA7Yk5j0WQLpKWeKD++/1j/8IWrEJevDjRr8Qd+Lf+WWFiGP4azdoWy2z3WDWJ80zfH3+/kMjhmzRFCaQX5B5cDOZ+Zx3kNkwFjXVm9Uxvg9n9JrxK7CGY2JIGAys7RSfOO5QajH5YFpYLP1GNwtSU6pHoog2G2HRJHZcXynhJ9OJCnO59SUo3owJ6U1KpQ5r4I+ys3KWDrKChYuQ5y9KrCgqErwyUkJW/rGy0KFTgVUQ4='
