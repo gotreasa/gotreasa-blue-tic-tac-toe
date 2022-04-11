@@ -14,6 +14,6 @@ describe('Console Game', () => {
 
   test('should make a move when the game is played', () => {
     consoleGame.play();
-    expect(consoleGame.controller.move()).toHaveBeenCalled();
+    expect(consoleGame.controller.move).toHaveBeenCalled();
   });
 });
