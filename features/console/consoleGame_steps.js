@@ -1,6 +1,5 @@
 const {
   Given,
-  And,
   When,
   Then,
   Fusion,
@@ -62,15 +61,11 @@ Then(/^there is a (\d+) second pause between each step$/, (expectedSeconds) => {
   );
 });
 
-And(/^the game status is (.*)$/, (arg0) => {
-  consoleGame.controller.game.getGameStatus = jest.fn();
-  consoleGame.controller.game.getGameStatus.mockReturnValue(arg0);
-  consoleGame.controller.game.getGameStatus.mockReset();
-});
-
-Then(/^the game ends with the status (.*)$/, (endGameStatus) => {
+Then('the game ends with one of the end game statuses', () => {
   expect(console.log).toHaveBeenCalledWith(
-    expect.stringContaining(endGameStatus),
+    expect.stringMatching(
+      /(Player X won!)|(Player O won!)|(The game has ended in a draw!)/,
+    ),
   );
 });
 

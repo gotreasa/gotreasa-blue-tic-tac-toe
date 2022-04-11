@@ -418,3 +418,13 @@ Then the bot moves to an empty square <position>
   When playing the game
   Then the game ends when an end game status is reached
 ```
+
+## Pomodoro 26
+
+- 🚧 UAT9.5 - The game ends when an end game status is reached
+
+```
+  Given a new console game
+  When playing the game
+  Then the game ends when an end game status is reached
+```

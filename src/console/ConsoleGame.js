@@ -16,6 +16,7 @@ class ConsoleGame {
   play() {
     this.renderer.print();
     this.controller.move();
+    this.renderer.print();
     wait(2000);
   }
 }
