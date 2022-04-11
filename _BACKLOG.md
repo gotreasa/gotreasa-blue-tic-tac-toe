@@ -135,9 +135,9 @@ Then the board is printed
   | [" ", "X", "O", "X", "O", " ", " ", "X", " "] | O    |
 ```
 
-### 🚧 US8 - Bot versus Bot playing the game
+### ✅ US8 - Bot versus Bot playing the game
 
-#### 🚧 UAT8.1 - Bot makes a move
+#### ✅ UAT8.1 - Bot makes a move
 
 ```
 Given a new game controller
@@ -151,9 +151,9 @@ Then the bot moves to an empty square <position>
             | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] | 6        |
 ```
 
-### ⚠ US9 - Console running the game
+### 🚧 US9 - Console running the game
 
-#### ⚠ UAT9.1 - Making the moves
+#### 🚧 UAT9.1 - Making the moves
 
 ```
   Given a new console game

@@ -7,8 +7,11 @@ const {
 } = require('jest-cucumber-fusion');
 
 const { ConsoleRenderer } = require('../../src/console/ConsoleRenderer');
+const { ConsoleGame } = require('../../src/console/ConsoleGame');
 
 let consoleRenderer;
+let consoleGame;
+
 console.log = jest.fn();
 
 Given('a new consoleRenderer', () => {
@@ -23,6 +26,19 @@ Then('the board is printed', () => {
   expect(console.log).toHaveBeenCalledWith(
     expect.stringContaining(' | | \n-+-+-\n | | \n-+-+-\n | | '),
   );
+});
+
+Given('a new console game', () => {
+  consoleGame = new ConsoleGame();
+  jest.spyOn(consoleGame.controller, 'move');
+});
+
+When('playing the game', () => {
+  consoleGame.play();
+});
+
+Then('the bot is taking steps one at a time', () => {
+  expect(consoleGame.controller.move).toHaveBeenCalled();
 });
 
 Fusion('consoleGame.feature');

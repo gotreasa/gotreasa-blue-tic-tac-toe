@@ -339,7 +339,7 @@ Then the board is printed
 
 ## Pomodoro 20
 
-- 🚧 UAT8.1 - Bot makes a move
+- ✅ UAT8.1 - Bot makes a move
 
 ```
 Given a new game controller
@@ -351,4 +351,14 @@ Then the bot moves to an empty square <position>
             | steps                                          | position |
             | ["X", "O", " ", " ", " ", " ", " ", " ", " " ] | 3        |
             | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] | 6        |
+```
+
+## Pomodoro 21
+
+- 🚧 UAT9.1 - Making the moves
+
+```
+  Given a new console game
+  When playing the game
+  Then the bot is taking steps one at a time
 ```
