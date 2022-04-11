@@ -46,4 +46,10 @@ Then('the board is printed after each move', () => {
   expect(consoleGame.renderer.print).toHaveBeenCalled();
 });
 
+Then('the game status is printed after each move', () => {
+  expect(console.log).toHaveBeenCalledWith(
+    expect.stringContaining('Player X has the next move'),
+  );
+});
+
 Fusion('consoleGame.feature');

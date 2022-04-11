@@ -153,7 +153,7 @@ Then the bot moves to an empty square <position>
 
 ### 🚧 US9 - Console running the game
 
-#### 🚧 UAT9.1 - Making the moves
+#### ✅ UAT9.1 - Making the moves
 
 ```
   Given a new console game
@@ -161,7 +161,7 @@ Then the bot moves to an empty square <position>
   Then the bot is taking steps one at a time
 ```
 
-#### ⚠ UAT9.2 - The board is printed after each move
+#### ✅ UAT9.2 - The board is printed after each move
 
 ```
   Given a new console game
@@ -169,7 +169,7 @@ Then the bot moves to an empty square <position>
   Then the board is printed after each step
 ```
 
-#### ⚠ UAT9.3 - The latest status is printed after each move
+#### 🚧 UAT9.3 - The latest status is printed after each move
 
 ```
   Given a new console game

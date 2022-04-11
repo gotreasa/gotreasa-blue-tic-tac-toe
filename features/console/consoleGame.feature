@@ -14,3 +14,8 @@ Feature: Console Game
         Given a new console game
         When playing the game
         Then the board is printed after each move
+
+    Scenario: The latest status is printed after each move
+        Given a new console game
+        When playing the game
+        Then the game status is printed after each move
