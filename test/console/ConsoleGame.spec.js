@@ -7,6 +7,8 @@ describe('Console Game', () => {
     consoleGame = new ConsoleGame();
     consoleGame.controller.move = jest.fn();
     consoleGame.renderer.print = jest.fn();
+    jest.useFakeTimers();
+    jest.spyOn(global, 'setTimeout');
   });
 
   afterEach(() => {
@@ -21,5 +23,10 @@ describe('Console Game', () => {
   test('should make a print the board state when the game is played', () => {
     consoleGame.play();
     expect(consoleGame.renderer.print).toHaveBeenCalled();
+  });
+
+  test('should wait 2 seconds before the next move', () => {
+    consoleGame.play();
+    expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 2000);
   });
 });
