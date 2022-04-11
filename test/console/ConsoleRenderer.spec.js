@@ -52,6 +52,7 @@ describe('Printing the state of the game', () => {
   test.each`
     status      | expectedStatus
     ${'X_TURN'} | ${'Player X, it is your turn'}
+    ${'O_TURN'} | ${'Player O, it is your turn'}
   `(
     'should include the game status as "$expectedStatus" when the game status is $status',
     ({ status, expectedStatus }) => {
