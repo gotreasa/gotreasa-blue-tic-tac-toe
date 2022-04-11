@@ -15,3 +15,4 @@
 - ⚠ TD13: move PLAYER_X and PLAYER_O constants to Player class?
 - ✅ TD14: fix up the Pact verification on PactFlow
 - ✅ TD15: Update the jest config to prevent it causing problems when the pact files are updated
+- ⚠ TD16: change square positions into constants

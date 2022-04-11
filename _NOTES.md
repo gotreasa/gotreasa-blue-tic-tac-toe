@@ -289,14 +289,19 @@ Then the board is printed
 ## Pomodoro 18
 
 - ✅ TD15: Update the jest config to prevent it causing problems when the pact files are updated
-- ⚠ UAT8.1 - Bot makes a move
+- 🚧 UAT8.1 - Bot makes a move
 
 ```
   Given a new game
   And a bot
   And steps already taken <steps>
   When stepping with the bot
-  Then the bot moves to an empty square
+  Then the bot moves to an empty square <position>
+
+        Examples:
+            | steps                                          | position |
+            | ["X", "O", " ", " ", " ", " ", " ", " ", " " ] | 3        |
+            | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] | 6        |
 ```
 
 - ⚠ UAT9.1 - Making the moves
