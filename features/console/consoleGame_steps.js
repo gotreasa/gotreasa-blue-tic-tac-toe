@@ -31,6 +31,7 @@ Then('the board is printed', () => {
 Given('a new console game', () => {
   consoleGame = new ConsoleGame();
   jest.spyOn(consoleGame.controller, 'move');
+  jest.spyOn(consoleGame.renderer, 'print');
 });
 
 When('playing the game', () => {
@@ -42,9 +43,7 @@ Then('the bot is taking steps one at a time', () => {
 });
 
 Then('the board is printed after each move', () => {
-  consoleGame.renderer.print = jest.fn();
   expect(consoleGame.renderer.print).toHaveBeenCalled();
-  consoleGame.renderer.print.mockReset();
 });
 
 Fusion('consoleGame.feature');

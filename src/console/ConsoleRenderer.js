@@ -1,8 +1,8 @@
 const { Game } = require('../domain/Game');
 
 class ConsoleRenderer {
-  constructor() {
-    this.game = new Game();
+  constructor(game = new Game()) {
+    this.game = game;
   }
 
   print() {
