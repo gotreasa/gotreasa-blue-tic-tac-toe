@@ -14,7 +14,7 @@ describe('Game bot', () => {
     board                                            | position | positionGuesses
     ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${3}     | ${[3]}
     ${['X', 'O', ' ', ' ', 'X', ' ', ' ', ' ', ' ']} | ${6}     | ${[6]}
-    ${['X', 'O', ' ', ' ', 'X', 'X', ' ', ' ', ' ']} | ${8}     | ${[1, 2, 5, 6]}
+    ${['X', 'O', ' ', ' ', 'X', 'X', ' ', ' ', ' ']} | ${8}     | ${[0, 1, 4, 5, 8]}
   `(
     'should move to empty position $position for board $board',
     ({ board, position, positionGuesses }) => {
@@ -22,6 +22,7 @@ describe('Game bot', () => {
       const bot = new Bot(game);
       game.getBoardState = jest.fn(() => board);
       positionGuesses.forEach((positionGuess) => {
+        console.log('guess', positionGuess);
         Math.random.mockReturnValueOnce(positionGuess / 9);
       });
       expect(bot.getNextMove()).toBe(position);

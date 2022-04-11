@@ -4,8 +4,11 @@ class Bot {
   }
 
   getNextMove() {
-    const position = Math.floor(Math.random() * 9);
-    console.log('The position', this.game.getBoardState()[position]);
+    let position;
+
+    do {
+      position = Math.floor(Math.random() * 9);
+    } while (this.game.getBoardState()[position] !== ' ');
 
     return position;
   }
