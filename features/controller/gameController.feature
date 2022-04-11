@@ -1,6 +1,6 @@
 Feature: Controller manage the bot versus bot game
 
-    Scenario: Bot makes a move
+    Scenario Outline: Bot makes a move
 
         Given a new game controller
         And steps already taken <steps>

@@ -18,15 +18,16 @@ describe('Game controller', () => {
   });
 
   test.each`
-    board          | movePosition
-    ${EMPTY_BOARD} | ${2}
+    board                                            | movePosition
+    ${EMPTY_BOARD}                                   | ${2}
+    ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${3}
   `(
     'should have bot place mark $expectedMark in postion $markPosition for $board',
     ({ board, movePosition }) => {
       gameController.game.getBoardState.mockReturnValue(board);
       gameController.bot.getNextMove.mockReturnValue(movePosition);
       gameController.getNextMove();
-      expect(gameController.getNextMove()).toBe(2);
+      expect(gameController.getNextMove()).toBe(movePosition);
     },
   );
 });
