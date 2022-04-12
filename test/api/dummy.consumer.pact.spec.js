@@ -6,15 +6,16 @@ const OK = 200;
 
 pactWith(
   {
-    consumer: 'dummy_client',
-    provider: 'dummy_app',
+    consumer: 'Tic Tac Toe Client',
+    provider: 'Tic Tac Toe Application',
     pactBroker: 'https://gotreasa.pact.dius.com.au/',
     pactBrokerToken: process.env.PACT_BROKER_TOKEN,
     consumerVersion: versionFromGitTag(),
   },
   (provider) => {
-    describe('dummmy API', () => {
+    describe('Health Endpoint', () => {
       let instance;
+      const path = '/api/v1/health';
 
       beforeAll(() => {
         instance = axios.create({
@@ -24,23 +25,19 @@ pactWith(
 
       beforeEach(() => {
         return provider.addInteraction({
-          state: 'Initial state',
-          uponReceiving: 'a request for the dummy API',
+          uponReceiving: 'a request for the health API',
           withRequest: {
             method: 'GET',
-            path: '/api/v1/dummy',
+            path,
           },
           willRespondWith: {
             status: OK,
-            headers: {
-              'Content-Type': 'application/json; charset=utf-8',
-            },
           },
         });
       });
 
       test('should return a response of OK', async () => {
-        const response = await instance.get('/api/v1/dummy');
+        const response = await instance.get(path);
         expect(response.status).toBe(OK);
       });
     });
