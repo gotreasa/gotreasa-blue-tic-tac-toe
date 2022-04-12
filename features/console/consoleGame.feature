@@ -20,11 +20,6 @@ Feature: Console Game
         When playing the game
         Then the game status is printed after each move
 
-    Scenario: The game pauses between each step
-        Given a new console game
-        When playing the game
-        Then there is a 2 second pause between each step
-
     Scenario: The game ends when an end game status is reached
         Given a new console game
         When playing the game

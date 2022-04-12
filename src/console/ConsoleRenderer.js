@@ -18,10 +18,8 @@ class ConsoleRenderer {
   }
 
   print() {
-    this.game.output = `Game Board Creation…
-${this.getGrid()}
-Board Created.
-${this.getGameStatus()}`;
+    this.game.output = `${this.getGrid()}
+${this.getGameStatus()}\n`;
     console.log(this.game.output);
   }
 

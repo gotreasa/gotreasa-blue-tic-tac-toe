@@ -13,8 +13,6 @@ let consoleRenderer;
 let consoleGame;
 
 console.log = jest.fn();
-jest.useFakeTimers();
-jest.spyOn(global, 'setTimeout');
 
 Given('a new consoleRenderer', () => {
   consoleRenderer = new ConsoleRenderer();
@@ -34,10 +32,11 @@ Given('a new console game', () => {
   consoleGame = new ConsoleGame();
   jest.spyOn(consoleGame.controller, 'move');
   jest.spyOn(consoleGame.renderer, 'print');
+  consoleGame.wait = jest.fn().mockResolvedValue();
 });
 
-When('playing the game', () => {
-  consoleGame.play();
+When('playing the game', async () => {
+  await consoleGame.play();
 });
 
 Then('the bot is taking steps one at a time', () => {
