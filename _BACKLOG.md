@@ -151,7 +151,7 @@ Then the bot moves to an empty square <position>
             | ["X", "O", " ", "X", " ", " ", " ", " ", " " ] | 6        |
 ```
 
-### 🚧 US9 - Console running the game
+### ✅ US9 - Console running the game
 
 #### ✅ UAT9.1 - Making the moves
 
@@ -185,7 +185,7 @@ Then the bot moves to an empty square <position>
   Then there is a 2 second pause between each step
 ```
 
-#### 🚧 UAT9.5 - The game ends when an end game status is reached
+#### ✅ UAT9.5 - The game ends when an end game status is reached
 
 ```
   Given a new console game
@@ -193,9 +193,9 @@ Then the bot moves to an empty square <position>
   Then the game ends when an end game status is reached
 ```
 
-### ⚠ US10 - Bot versus API
+### 🚧 US10 - Bot versus API
 
-#### ⚠ UAT10.1 - API health
+#### 🚧 UAT10.1 - API health
 
 ```
   Given an API consumer

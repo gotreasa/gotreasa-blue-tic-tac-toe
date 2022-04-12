@@ -421,10 +421,23 @@ Then the bot moves to an empty square <position>
 
 ## Pomodoro 26
 
-- 🚧 UAT9.5 - The game ends when an end game status is reached
+- ✅ UAT9.5 - The game ends when an end game status is reached
 
 ```
   Given a new console game
   When playing the game
   Then the game ends when an end game status is reached
+```
+
+## Pomodoro 27
+
+- ✅ Define the OpenAPI specification
+- 🚧 update the consumer pact
+- ⚠ update the provider pact
+- ⚠ UAT10.1 - API health
+
+```
+  Given an API consumer
+  When the health is checked
+  Then HTTP OK is returned
 ```

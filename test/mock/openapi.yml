@@ -1,20 +1,76 @@
 openapi: '3.0.3'
 info:
-  title: Template NodeJS & Express API
-  description: Template NodeJS & Express API for testing.
+  title: Tic Tac Toe API
+  description: API for playing Tic Tac Toe using bot versus bot.
   version: 1.0.0
 servers:
   - url: http://localhost:9080
   - url: https://gotreasa-blue-tic-tac-toe-app.mcryx2h9klu.eu-de.codeengine.appdomain.cloud
 paths:
-  /api/v1/dummy:
+  /api/v1/health:
     get:
-      summary: Returns a list of users.
-      description: List of users on the system.
+      summary: Health check endpoint.
+      description: Reports that the service is online.
       responses:
         200:
           description: OK
+  /api/vi/play:
+    get:
+      summary: Bot versus bot game play.
+      description: Plays the game until an end game outcome is reached with two bots.  Returns each player's move and the status.
+      responses:
+        200:
+          description: The game has played successfully.
           content:
             application/json:
               schema:
-                type: object
+                type: array
+                description: List of game moves
+                example:
+                  [
+                    {
+                      'status': 'X_TURN',
+                      'move': [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                    },
+                    {
+                      'status': 'O_TURN',
+                      'move': ['X', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                    },
+                    {
+                      'status': 'X_TURN',
+                      'move': ['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+                    },
+                    {
+                      'status': 'O_TURN',
+                      'move': ['X', 'O', ' ', 'X', ' ', ' ', ' ', ' ', ' '],
+                    },
+                    {
+                      'status': 'X_TURN',
+                      'move': ['X', 'O', 'O', 'X', ' ', ' ', ' ', ' ', ' '],
+                    },
+                    {
+                      'status': 'X_WIN',
+                      'move': ['X', 'O', 'O', 'X', ' ', ' ', 'X', ' ', ' '],
+                    },
+                  ]
+                items:
+                  type: object
+                  properties:
+                    status:
+                      type: string
+                      description: The status of the game.
+                      enum:
+                        - X_WON
+                        - O_WON
+                        - DRAW
+                      example: X_WON
+                    board:
+                      type: array
+                      description: The board state.
+                      items:
+                        type: string
+                        enum:
+                          - ' '
+                          - X
+                          - O
+                        example: ['X', 'O', 'O', 'X', ' ', ' ', 'X', ' ', ' ']
