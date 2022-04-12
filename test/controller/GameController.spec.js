@@ -10,6 +10,7 @@ describe('Game controller', () => {
     gameController.bot.getNextMove = jest.fn();
     gameController.game.fillSquare = jest.fn();
     gameController.game.getNextPlayer = jest.fn();
+    gameController.game.getGameStatus = jest.fn();
   });
 
   afterEach(() => {
@@ -50,4 +51,47 @@ describe('Game controller', () => {
       );
     },
   );
+
+  test('should play game until no more moves left', () => {
+    gameController.game.getBoardState
+      .mockReturnValueOnce(EMPTY_BOARD)
+      .mockReturnValueOnce(['X', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
+      .mockReturnValueOnce(['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
+      .mockReturnValueOnce(['X', 'O', ' ', 'X', ' ', ' ', ' ', ' ', ' '])
+      .mockReturnValueOnce(['X', 'O', 'O', 'X', ' ', ' ', ' ', ' ', ' '])
+      .mockReturnValueOnce(['X', 'O', 'O', 'X', ' ', ' ', 'X', ' ', ' ']);
+    gameController.game.getGameStatus
+      .mockReturnValueOnce('X_TURN')
+      .mockReturnValueOnce('O_TURN')
+      .mockReturnValueOnce('X_TURN')
+      .mockReturnValueOnce('O_TURN')
+      .mockReturnValueOnce('X_TURN')
+      .mockReturnValueOnce('X_WIN');
+    expect(gameController.getEntireGame()).toEqual([
+      {
+        board: EMPTY_BOARD,
+        status: 'X_TURN',
+      },
+      {
+        board: ['X', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        status: 'O_TURN',
+      },
+      {
+        board: ['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        status: 'X_TURN',
+      },
+      {
+        board: ['X', 'O', ' ', 'X', ' ', ' ', ' ', ' ', ' '],
+        status: 'O_TURN',
+      },
+      {
+        board: ['X', 'O', 'O', 'X', ' ', ' ', ' ', ' ', ' '],
+        status: 'X_TURN',
+      },
+      {
+        board: ['X', 'O', 'O', 'X', ' ', ' ', 'X', ' ', ' '],
+        status: 'X_WON',
+      },
+    ]);
+  });
 });

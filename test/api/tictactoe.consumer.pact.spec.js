@@ -104,7 +104,7 @@ pactWith(
           expect(response.status).toBe(OK);
         });
 
-        test('should valid game body', async () => {
+        test('should return a valid game body', async () => {
           const response = await instance.get(path);
           expect(response.data).toEqual([
             {
