@@ -6,16 +6,12 @@ const server = require('../../app');
 const providerOptions = {
   logLevel: 'INFO',
   providerBaseUrl: `http://localhost:${process.env.SERVER_PORT || 9080}`,
-  provider: 'dummy_app',
+  provider: 'Tic Tac Toe Application',
   providerVersion: versionFromGitTag(),
   matchingRules: {
     body: {},
   },
-  stateHandlers: {
-    'Initial state': () => {
-      return true;
-    },
-  },
+  stateHandlers: {},
 };
 
 if (process.env.CI || process.env.PACT_PUBLISH_RESULTS) {
@@ -27,17 +23,20 @@ if (process.env.CI || process.env.PACT_PUBLISH_RESULTS) {
 } else {
   Object.assign(providerOptions, {
     pactUrls: [
-      path.resolve(__dirname, '../../pact/pacts/dummy_client-dummy_app.json'),
+      path.resolve(
+        __dirname,
+        '../../pact/pacts/tic_tac_toe_client-tic_tac_toe_application.json',
+      ),
     ],
   });
 }
 
-describe('Test Dummy Provider', () => {
+describe('Test Tic Tac Toe Provider', () => {
   afterAll(async () => {
     await server.close();
   });
 
-  test('tests dummmy api routes', async () => {
+  test('should verify all of the Tic Tac Toe Api routes', async () => {
     try {
       const output = await new Verifier(providerOptions).verifyProvider();
       console.log(output);
