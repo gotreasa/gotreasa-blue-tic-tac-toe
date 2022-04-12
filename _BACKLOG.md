@@ -195,7 +195,7 @@ Then the bot moves to an empty square <position>
 
 ### 🚧 US10 - Bot versus API
 
-#### 🚧 UAT10.1 - API health
+#### ✅ UAT10.1 - API health
 
 ```
   Given an API consumer
@@ -203,7 +203,7 @@ Then the bot moves to an empty square <position>
   Then HTTP OK is returned
 ```
 
-#### ⚠ UAT10.2 - The board moves are returned
+#### 🚧 UAT10.2 - The board moves are returned
 
 ```
   Given an API consumer

@@ -432,12 +432,28 @@ Then the bot moves to an empty square <position>
 ## Pomodoro 27
 
 - ✅ Define the OpenAPI specification
-- 🚧 update the consumer pact
-- ⚠ update the provider pact
-- ⚠ UAT10.1 - API health
+- ✅ UAT10.1 - API health
 
 ```
   Given an API consumer
   When the health is checked
   Then HTTP OK is returned
+```
+
+## Pomdoro 28
+
+- 🚧 UAT10.2 - The board moves are returned
+
+```
+  Given an API consumer
+  When the game endpoint is called
+  Then board representation of each move is returned
+```
+
+- ⚠ UAT10.2 - The game status is returned for each move
+
+```
+  Given an API consumer
+  When the game endpoint is called
+  Then the game status for each move is returned
 ```
