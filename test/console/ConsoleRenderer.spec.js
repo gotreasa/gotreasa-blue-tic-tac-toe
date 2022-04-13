@@ -9,7 +9,7 @@ describe('Starting a ConsoleRenderer', () => {
   beforeEach(() => {
     consoleRenderer = new ConsoleRenderer();
     consoleRenderer.game.board.getSquares = jest.fn();
-    consoleRenderer.game.board.getSquares.mockReturnValue(EMPTY_BOARD);
+    consoleRenderer.game.board.getSquares.mockReturnValue([...EMPTY_BOARD]);
     console.log = jest.fn();
   });
 
