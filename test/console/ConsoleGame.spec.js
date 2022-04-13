@@ -25,7 +25,7 @@ describe('Console Game', () => {
     expect(consoleGame.controller.move).toHaveBeenCalled();
   });
 
-  test('should make a print the board state when the game is played', () => {
+  test('should print the board state when the game is played', () => {
     consoleGame.play();
     expect(consoleGame.renderer.print).toHaveBeenCalled();
   });

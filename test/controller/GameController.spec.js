@@ -25,7 +25,7 @@ describe('Game controller', () => {
     ${EMPTY_BOARD}                                   | ${2}
     ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${3}
   `(
-    'should have bot place mark $expectedMark in postion $markPosition for $board',
+    'should have bot chose postion $movePosition for board $board',
     ({ board, movePosition }) => {
       gameController.game.getBoardState.mockReturnValue(board);
       gameController.bot.getNextMove.mockReturnValue(movePosition);
@@ -39,7 +39,7 @@ describe('Game controller', () => {
     ${EMPTY_BOARD}                                   | ${2}         | ${'X'}
     ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${3}         | ${'O'}
   `(
-    'should have bot place mark $expectedMark in postion $markPosition for $board',
+    'should have bot place mark $expectedMark in postion $movePosition for $board',
     ({ board, movePosition, expectedMark }) => {
       gameController.game.getBoardState.mockReturnValue(board);
       gameController.bot.getNextMove.mockReturnValue(movePosition);

@@ -1,6 +1,6 @@
 Feature: Player moves
 
-    Scenario Outline: The board correctly reflects the player"s moves <squares>
+    Scenario Outline: The board correctly reflects the players moves <steps>
         Given a new game
         And steps <steps>
         When getting the board state
@@ -18,7 +18,7 @@ Feature: Player moves
         When checking who takes the next move
         Then it's player X turn
 
-    Scenario Outline: Players alternative turns
+    Scenario Outline: Players alternative turns - <next mark>
         Given a new game
         And the step count is <step count>
         When checking who takes the next move

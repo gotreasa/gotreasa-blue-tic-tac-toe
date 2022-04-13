@@ -15,7 +15,7 @@ Given('a new game controller', () => {
   gameController = new GameController();
 });
 
-And(/^steps already taken (.*)$/, (stepsString) => {
+And(/^moves already taken (.*)$/, (stepsString) => {
   const steps = JSON.parse(stepsString);
   gameController.game.board.squares = steps;
 });
