@@ -14,7 +14,7 @@ paths:
       responses:
         200:
           description: OK
-  /api/vi/play:
+  /api/v1/play:
     get:
       summary: Bot versus bot game play.
       description: Plays the game until an end game outcome is reached with two bots.  Returns each player's move and the status.

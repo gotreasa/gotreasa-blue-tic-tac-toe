@@ -89,7 +89,7 @@ pactWith(
                     SPACE_MARKER,
                   ],
                   status: term({
-                    matcher: 'X_WON|O_WON|DRAW',
+                    matcher: 'X_TURN|O_TURN|X_WON|O_WON|DRAW',
                     generate: 'X_WON',
                   }),
                 },
