@@ -37,6 +37,13 @@ describe('Starting a ConsoleRenderer', () => {
   test('should get the empty state of the board', () => {
     expect(consoleRenderer.getGrid()).toBe(' | | \n-+-+-\n | | \n-+-+-\n | | ');
   });
+
+  test('should indicate the start of the game', () => {
+    consoleRenderer.print();
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringContaining('Starting a new game'),
+    );
+  });
 });
 
 describe('Printing the state of the game', () => {

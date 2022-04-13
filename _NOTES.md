@@ -495,5 +495,11 @@ Then the bot moves to an empty square <position>
 
 - ✅ TD20: prevent the board state from returning the last value
 - ✅ TD12: get rid of fillSquares
-- ⚠ TD17: add player to the move information
+- 🚧 TD17: add player to the move information
+- ⚠ TD16: change square positions into constants
+
+## Pomodoro 33
+
+- 🚧 TD17: add player to the move information
+- ⚠ TD21: add provider spec for a DRAW?
 - ⚠ TD16: change square positions into constants

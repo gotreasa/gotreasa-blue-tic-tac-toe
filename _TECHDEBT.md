@@ -16,7 +16,8 @@
 - ✅ TD14: fix up the Pact verification on PactFlow
 - ✅ TD15: Update the jest config to prevent it causing problems when the pact files are updated
 - ⚠ TD16: change square positions into constants
-- ⚠ TD17: add player to the move information
+- 🚧 TD17: add player to the move information
 - ✅ TD18: add missing wait after empty board is printed
 - ✅ TD19: move the playGame function in to separate file
 - ✅ TD20: prevent the board state from returning the last value
+- ⚠ TD21: add provider spec for a DRAW?
