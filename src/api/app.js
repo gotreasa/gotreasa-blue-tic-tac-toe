@@ -8,6 +8,16 @@ app.use(cors());
 
 app.get('/api/v1/health', (_, response) => response.sendStatus(200));
 
-app.get('api/v1/play', (_, response) => response.send(200).json());
+const { GameController } = require('../controller/GameController');
+
+const playGame = () => {
+  const gameController = new GameController();
+
+  return gameController.getEntireGame();
+};
+
+app.get('/api/v1/play', async (_, response) =>
+  response.status(200).json(playGame()),
+);
 
 module.exports = app;

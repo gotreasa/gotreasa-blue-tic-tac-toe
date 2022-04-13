@@ -477,3 +477,13 @@ Then the bot moves to an empty square <position>
   When the game endpoint is called
   Then board representation of each move is returned
 ```
+
+## Pomdoro 31
+
+- 🚧 UAT10.2 - The board moves are returned
+
+```
+  Given an API consumer
+  When the game endpoint is called
+  Then board representation of each move is returned
+```

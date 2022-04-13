@@ -20,14 +20,18 @@ class GameController {
 
   getEntireGame() {
     const result = [];
-    let gameStatus = '';
+    let gameStatus = this.game.getGameStatus();
+    result.push({
+      board: this.game.getBoardState(),
+      status: gameStatus,
+    });
     while (!END_STATUSES.includes(gameStatus)) {
+      this.move();
       gameStatus = this.game.getGameStatus();
       result.push({
         board: this.game.getBoardState(),
         status: gameStatus,
       });
-      this.move();
     }
 
     return result;
