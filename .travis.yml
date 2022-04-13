@@ -49,13 +49,6 @@ jobs:
       script:
         - npm run build:postman
         - npm run test:api
-    - env: step=Run Pact tests
-      name: Run Pact tests
-      script:
-        - touch .env
-        - npm run test:api:consumer
-        - npm run publish:pact
-        - export CI=true && npm run test:api:provider
     - stage: Build
       env: step=Build and Publish image
       name: Build and Publish image

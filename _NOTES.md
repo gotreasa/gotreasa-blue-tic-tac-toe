@@ -500,6 +500,6 @@ Then the bot moves to an empty square <position>
 
 ## Pomodoro 33
 
-- 🚧 TD17: add player to the move information
-- ⚠ TD21: add provider spec for a DRAW?
+- ✅ TD17: add player to the move information
+- ✅ TD21: add provider spec for a DRAW?
 - ⚠ TD16: change square positions into constants
