@@ -1,6 +1,6 @@
 Feature: Player moves
 
-    Scenario Outline: The board correctly reflects the player"s moves
+    Scenario Outline: The board correctly reflects the player"s moves <squares>
         Given a new game
         And steps <steps>
         When getting the board state
