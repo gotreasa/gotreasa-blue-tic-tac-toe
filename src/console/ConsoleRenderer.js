@@ -18,7 +18,8 @@ class ConsoleRenderer {
   }
 
   print() {
-    this.game.output = `${this.getGrid()}
+    this.game.output = `Starting a new game
+${this.getGrid()}
 ${this.getGameStatus()}\n`;
     console.log(this.game.output);
   }
