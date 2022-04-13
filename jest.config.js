@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'feature'],
-  modulePathIgnorePatterns: ['/pact/'],
+  modulePathIgnorePatterns: ['/pact/', '/node_modules/'],
   resetMocks: true,
   resetModules: true,
   testEnvironment: 'node',
