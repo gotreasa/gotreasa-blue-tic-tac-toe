@@ -487,3 +487,6 @@ Then the bot moves to an empty square <position>
   When the game endpoint is called
   Then board representation of each move is returned
 ```
+
+- ✅ TD19: move the playGame function in to separate file
+- ✅ TD18: add missing wait after empty board is printed

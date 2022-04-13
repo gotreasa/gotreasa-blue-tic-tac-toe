@@ -1,3 +1,7 @@
+const { toHaveBeenCalledAfter } = require('jest-extended');
+
+expect.extend({ toHaveBeenCalledAfter });
+
 const { ConsoleGame } = require('../../src/console/ConsoleGame');
 
 describe('Console Game', () => {
@@ -7,6 +11,7 @@ describe('Console Game', () => {
     consoleGame = new ConsoleGame();
     consoleGame.controller.move = jest.fn();
     consoleGame.renderer.print = jest.fn();
+    consoleGame.controller.game.getGameStatus = jest.fn();
     jest.useFakeTimers();
     jest.spyOn(global, 'setTimeout');
   });
@@ -28,5 +33,13 @@ describe('Console Game', () => {
   test('should wait 2 seconds before the next move', () => {
     consoleGame.play();
     expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 2000);
+  });
+
+  test('should print the final outcome of the board', () => {
+    consoleGame.controller.game.getGameStatus.mockReturnValue('DRAW');
+    consoleGame.play();
+    expect(consoleGame.renderer.print).toHaveBeenCalledAfter(
+      consoleGame.controller.game.getGameStatus,
+    );
   });
 });

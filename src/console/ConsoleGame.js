@@ -10,13 +10,13 @@ class ConsoleGame {
   }
 
   async play() {
-    this.renderer.print();
     while (!END_STATUSES.includes(this.controller.game.getGameStatus())) {
-      this.controller.move();
       this.renderer.print();
+      this.controller.move();
       // eslint-disable-next-line no-await-in-loop
       await this.wait();
     }
+    this.renderer.print();
   }
 
   async wait() {
