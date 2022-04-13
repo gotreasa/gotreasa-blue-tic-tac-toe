@@ -50,7 +50,9 @@ describe('Existing game', () => {
   `(
     'should get the board state as $expectedBoard when the steps are $steps',
     ({ steps, expectedBoard }) => {
-      game.fillSquares(steps);
+      steps.forEach((position, index) => {
+        game.fillSquare(position, index % 2 === 0 ? 'X' : 'O');
+      });
       expect(game.getBoardState()).toEqual(expectedBoard);
     },
   );
