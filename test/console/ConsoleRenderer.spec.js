@@ -1,4 +1,5 @@
 const { ConsoleRenderer } = require('../../src/console/ConsoleRenderer');
+const { EMPTY_BOARD, TOP_ROW_X_WIN } = require('../constants/boardSquares');
 
 const INITIAL_BOARD = ' | | \n-+-+-\n | | \n-+-+-\n | | ';
 
@@ -8,17 +9,7 @@ describe('Starting a ConsoleRenderer', () => {
   beforeEach(() => {
     consoleRenderer = new ConsoleRenderer();
     consoleRenderer.game.board.getSquares = jest.fn();
-    consoleRenderer.game.board.getSquares.mockReturnValue([
-      ' ',
-      ' ',
-      ' ',
-      ' ',
-      ' ',
-      ' ',
-      ' ',
-      ' ',
-      ' ',
-    ]);
+    consoleRenderer.game.board.getSquares.mockReturnValue(EMPTY_BOARD);
     console.log = jest.fn();
   });
 
@@ -52,6 +43,9 @@ describe('Printing the state of the game', () => {
   beforeEach(() => {
     consoleRenderer = new ConsoleRenderer();
     consoleRenderer.game.getGameStatus = jest.fn();
+    consoleRenderer.game.getCurrentPlayer = jest.fn();
+    consoleRenderer.game.board.getSquares = jest.fn();
+    consoleRenderer.game.board.getSquares.mockReturnValue(TOP_ROW_X_WIN);
 
     console.log = jest.fn();
   });
@@ -73,4 +67,12 @@ describe('Printing the state of the game', () => {
       );
     },
   );
+
+  test('should indicate the player taking the move', () => {
+    consoleRenderer.game.getCurrentPlayer.mockReturnValue('X');
+    consoleRenderer.print();
+    expect(console.log).toHaveBeenCalledWith(
+      expect.stringContaining('Player X:'),
+    );
+  });
 });
