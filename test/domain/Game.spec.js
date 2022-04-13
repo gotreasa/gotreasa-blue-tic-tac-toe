@@ -9,7 +9,7 @@ const {
   BACKWARD_DIAGONAL_X_WIN,
   FORWARD_DIAGONAL_O_WIN,
   DRAW_BAORD,
-} = require('../constants/boardSquares');
+} = require('../../src/constants/boardSquares');
 
 const EMPTY_SQUARES = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
 

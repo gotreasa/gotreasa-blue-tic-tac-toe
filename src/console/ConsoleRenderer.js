@@ -1,4 +1,4 @@
-const { EMPTY_BOARD } = require('../../test/constants/boardSquares');
+const { EMPTY_BOARD } = require('../constants/boardSquares');
 const { Game } = require('../domain/Game');
 
 const GAME_STATUS = {

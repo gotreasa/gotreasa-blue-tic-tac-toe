@@ -1,5 +1,5 @@
 const { GameController } = require('../../src/controller/GameController');
-const { EMPTY_BOARD } = require('../constants/boardSquares');
+const { EMPTY_BOARD } = require('../../src/constants/boardSquares');
 
 describe('Game controller', () => {
   let gameController;

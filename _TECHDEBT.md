@@ -22,5 +22,5 @@
 - ✅ TD20: prevent the board state from returning the last value
 - ✅ TD21: add provider spec for a DRAW?
 - ✅ TD22: ignore node_modules for Jest testing
-- ⚠ TD23: move the boardSquares constants to the src directory
+- 🚧 TD23: move the boardSquares constants to the src directory
 - ⚠ TD24: check the wording of the tests

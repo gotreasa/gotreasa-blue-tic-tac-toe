@@ -1,5 +1,8 @@
 const { ConsoleRenderer } = require('../../src/console/ConsoleRenderer');
-const { EMPTY_BOARD, TOP_ROW_X_WIN } = require('../constants/boardSquares');
+const {
+  EMPTY_BOARD,
+  TOP_ROW_X_WIN,
+} = require('../../src/constants/boardSquares');
 
 const INITIAL_BOARD = ' | | \n-+-+-\n | | \n-+-+-\n | | ';
 
