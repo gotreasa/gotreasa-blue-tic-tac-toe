@@ -490,3 +490,10 @@ Then the bot moves to an empty square <position>
 
 - ✅ TD19: move the playGame function in to separate file
 - ✅ TD18: add missing wait after empty board is printed
+
+## Pomoodoro 32
+
+- ✅ TD20: prevent the board state from returning the last value
+- ⚠ TD12: get rid of fillSquares
+- ⚠ TD17: add player to the move information
+- ⚠ TD16: change square positions into constants

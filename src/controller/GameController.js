@@ -22,14 +22,14 @@ class GameController {
     const result = [];
     let gameStatus = this.game.getGameStatus();
     result.push({
-      board: this.game.getBoardState(),
+      board: [...this.game.getBoardState()],
       status: gameStatus,
     });
     while (!END_STATUSES.includes(gameStatus)) {
       this.move();
       gameStatus = this.game.getGameStatus();
       result.push({
-        board: this.game.getBoardState(),
+        board: [...this.game.getBoardState()],
         status: gameStatus,
       });
     }
