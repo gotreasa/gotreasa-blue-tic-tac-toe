@@ -66,7 +66,7 @@ describe('Game controller', () => {
       .mockReturnValueOnce('X_TURN')
       .mockReturnValueOnce('O_TURN')
       .mockReturnValueOnce('X_TURN')
-      .mockReturnValueOnce('X_WIN');
+      .mockReturnValueOnce('X_WON');
     expect(gameController.getEntireGame()).toEqual([
       {
         board: EMPTY_BOARD,

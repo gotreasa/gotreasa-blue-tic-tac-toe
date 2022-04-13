@@ -1,7 +1,6 @@
+const { END_STATUSES } = require('../constants/statuses');
 const { GameController } = require('../controller/GameController');
 const { ConsoleRenderer } = require('./ConsoleRenderer');
-
-const END_STATUSES = ['X_WON', 'O_WON', 'DRAW'];
 
 class ConsoleGame {
   constructor() {
