@@ -1,3 +1,4 @@
+const { EMPTY_BOARD } = require('../../test/constants/boardSquares');
 const { Game } = require('../domain/Game');
 
 const GAME_STATUS = {
@@ -18,7 +19,13 @@ class ConsoleRenderer {
   }
 
   print() {
-    this.game.output = `Starting a new game
+    let firstLine = `Player ${this.game.getCurrentPlayer()}:`;
+    if (
+      JSON.stringify(this.game.getBoardState()) === JSON.stringify(EMPTY_BOARD)
+    ) {
+      firstLine = 'Starting a new game';
+    }
+    this.game.output = `${firstLine}
 ${this.getGrid()}
 ${this.getGameStatus()}\n`;
     console.log(this.game.output);
