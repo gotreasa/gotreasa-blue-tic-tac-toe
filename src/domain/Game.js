@@ -34,14 +34,6 @@ class Game {
     this.board.squares[position] = marker;
   }
 
-  fillSquares(order) {
-    order.forEach((position) => {
-      this.fillSquare(position, this.getNextPlayer());
-    });
-
-    return this.getBoardState();
-  }
-
   getBoardState() {
     return this.board.getSquares();
   }

@@ -494,6 +494,6 @@ Then the bot moves to an empty square <position>
 ## Pomoodoro 32
 
 - ✅ TD20: prevent the board state from returning the last value
-- ⚠ TD12: get rid of fillSquares
+- ✅ TD12: get rid of fillSquares
 - ⚠ TD17: add player to the move information
 - ⚠ TD16: change square positions into constants

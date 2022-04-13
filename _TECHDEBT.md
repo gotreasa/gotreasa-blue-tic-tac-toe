@@ -11,7 +11,7 @@
 - ✅ TD9: extract squares into board class
 - ✅ TD10: extract out the completexity from getGameStatus
 - ✅ TD11: rmeove this.nextPlayer
-- 🚧 TD12: get rid of fillSquares
+- ✅ TD12: get rid of fillSquares TD12: get rid of fillSquares
 - ⚠ TD13: move PLAYER_X and PLAYER_O constants to Player class?
 - ✅ TD14: fix up the Pact verification on PactFlow
 - ✅ TD15: Update the jest config to prevent it causing problems when the pact files are updated
