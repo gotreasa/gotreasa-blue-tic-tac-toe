@@ -480,7 +480,7 @@ Then the bot moves to an empty square <position>
 
 ## Pomdoro 31
 
-- 🚧 UAT10.2 - The board moves are returned
+- ✅ UAT10.2 - The board moves are returned
 
 ```
   Given an API consumer

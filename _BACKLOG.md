@@ -193,7 +193,7 @@ Then the bot moves to an empty square <position>
   Then the game ends when an end game status is reached
 ```
 
-### 🚧 US10 - Bot versus API
+### ✅ US10 - Bot versus API
 
 #### ✅ UAT10.1 - API health
 
@@ -203,7 +203,7 @@ Then the bot moves to an empty square <position>
   Then HTTP OK is returned
 ```
 
-#### 🚧 UAT10.2 - The board moves are returned
+#### ✅ UAT10.2 - The board moves are returned
 
 ```
   Given an API consumer
@@ -211,7 +211,7 @@ Then the bot moves to an empty square <position>
   Then board representation of each move is returned
 ```
 
-#### ⚠ UAT10.2 - The game status is returned for each move
+#### ❌ UAT10.2 - The game status is returned for each move
 
 ```
   Given an API consumer
