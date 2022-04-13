@@ -1,4 +1,15 @@
 const { EMPTY_BOARD } = require('../constants/boardSquares');
+const {
+  TOP_ROW_LEFT,
+  TOP_ROW_CENTRE,
+  TOP_ROW_RIGHT,
+  MIDDLE_ROW_LEFT,
+  MIDDLE_ROW_CENTRE,
+  MIDDLE_ROW_RIGHT,
+  BOTTOM_ROW_LEFT,
+  BOTTOM_ROW_RIGHT,
+  BOTTOM_ROW_CENTRE,
+} = require('../constants/positions');
 const { Game } = require('../domain/Game');
 
 const GAME_STATUS = {
@@ -34,11 +45,11 @@ ${this.getGameStatus()}\n`;
   getGrid() {
     const squares = this.game.board.getSquares();
 
-    return `${squares[0]}|${squares[1]}|${squares[2]}
+    return `${squares[TOP_ROW_LEFT]}|${squares[TOP_ROW_CENTRE]}|${squares[TOP_ROW_RIGHT]}
 -+-+-
-${squares[3]}|${squares[4]}|${squares[5]}
+${squares[MIDDLE_ROW_LEFT]}|${squares[MIDDLE_ROW_CENTRE]}|${squares[MIDDLE_ROW_RIGHT]}
 -+-+-
-${squares[6]}|${squares[7]}|${squares[8]}`;
+${squares[BOTTOM_ROW_LEFT]}|${squares[BOTTOM_ROW_CENTRE]}|${squares[BOTTOM_ROW_RIGHT]}`;
   }
 }
 

@@ -508,5 +508,5 @@ Then the bot moves to an empty square <position>
 
 - ✅ TD22: ignore node_modules for Jest testing
 - ✅ TD23: move the boardSquares constants to the src directory
-- 🚧 TD24: check the wording of the tests
-- ⚠ TD16: change square positions into constants
+- ✅ TD24: check the wording of the tests
+- ✅ TD16: change square positions into constants

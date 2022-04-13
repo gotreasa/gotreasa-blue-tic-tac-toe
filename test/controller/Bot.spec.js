@@ -1,3 +1,12 @@
+const {
+  TOP_ROW_LEFT,
+  TOP_ROW_CENTRE,
+  MIDDLE_ROW_LEFT,
+  MIDDLE_ROW_CENTRE,
+  MIDDLE_ROW_RIGHT,
+  BOTTOM_ROW_LEFT,
+  BOTTOM_ROW_RIGHT,
+} = require('../../src/constants/positions');
 const { Bot } = require('../../src/controller/Bot');
 const { Game } = require('../../src/domain/Game');
 
@@ -11,10 +20,10 @@ describe('Game bot', () => {
   });
 
   test.each`
-    board                                            | position | positionGuesses
-    ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${3}     | ${[3]}
-    ${['X', 'O', ' ', ' ', 'X', ' ', ' ', ' ', ' ']} | ${6}     | ${[6]}
-    ${['X', 'O', ' ', ' ', 'X', 'X', ' ', ' ', ' ']} | ${8}     | ${[0, 1, 4, 5, 8]}
+    board                                            | position            | positionGuesses
+    ${['X', 'O', ' ', ' ', ' ', ' ', ' ', ' ', ' ']} | ${MIDDLE_ROW_LEFT}  | ${[MIDDLE_ROW_LEFT]}
+    ${['X', 'O', ' ', ' ', 'X', ' ', ' ', ' ', ' ']} | ${BOTTOM_ROW_LEFT}  | ${[BOTTOM_ROW_LEFT]}
+    ${['X', 'O', ' ', ' ', 'X', 'X', ' ', ' ', ' ']} | ${BOTTOM_ROW_RIGHT} | ${[TOP_ROW_LEFT, TOP_ROW_CENTRE, MIDDLE_ROW_CENTRE, MIDDLE_ROW_RIGHT, BOTTOM_ROW_RIGHT]}
   `(
     'should move to empty position $position for board $board',
     ({ board, position, positionGuesses }) => {
