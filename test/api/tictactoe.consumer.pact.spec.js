@@ -24,7 +24,7 @@ pactWith(
   {
     consumer: 'Tic Tac Toe Client',
     provider: 'Tic Tac Toe Application',
-    pactBroker: 'https://gotreasa.pact.dius.com.au/',
+    pactBroker: 'https://gotreasa.pactflow.cio/',
     pactBrokerToken: process.env.PACT_BROKER_TOKEN,
     consumerVersion: versionFromGitTag(),
   },
@@ -43,7 +43,7 @@ pactWith(
 
         beforeEach(() => {
           return provider.addInteraction({
-            uponReceiving: 'a request for the health API',
+            uponReceiving: 'a request for the health API of Tic Tac Toe',
             withRequest: {
               method: 'GET',
               path,

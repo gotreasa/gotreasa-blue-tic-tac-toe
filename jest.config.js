@@ -13,6 +13,7 @@ module.exports = {
     },
   },
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'feature'],
+  moduleNameMapper: { '^uuid$': 'uuid' },
   modulePathIgnorePatterns: ['/pact/', '/node_modules/'],
   resetMocks: true,
   resetModules: true,
