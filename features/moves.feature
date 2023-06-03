@@ -18,13 +18,13 @@ Feature: Player moves
         When checking who takes the next move
         Then it's player X turn
 
-    Scenario Outline: Players alternative turns - <next mark>
+    Scenario Outline: Players alternative turns - <next_mark>
         Given a new game
-        And the step count is <step count>
+        And the step count is <step_count>
         When checking who takes the next move
-        Then the next mark is <next mark>
+        Then the next mark is <next_mark>
 
         Examples:
-            | step count | next mark |
+            | step_count | next_mark |
             | 3          | O         |
             | 0          | X         |
